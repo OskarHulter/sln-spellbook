@@ -1,9 +1,10 @@
-# Requests
+---
+title: httpie guide
+description: An introductory guide to http requests with httpie.
+---
 
 - for compatability - https://curl.se/docs/tutorial.html
 - for usability - https://httpie.io/docs/cli/examples
-
-## httpie
 
 ### Troubleshooting:
 
