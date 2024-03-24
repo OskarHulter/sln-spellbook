@@ -1,4 +1,5 @@
 {
+  "$schema": "https://json.schemastore.org/package",
   "name": "sln-spellbook",
   "version": "0.0.1",
   "type": "module",
