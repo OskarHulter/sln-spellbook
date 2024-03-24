@@ -1,0 +1,26 @@
+{
+  "name": "sln-spellbook",
+  "version": "0.0.1",
+  "type": "module",
+  "scripts": {
+    "dev": "astro dev",
+    "start": "astro dev",
+    "build": "astro check && astro build",
+    "preview": "astro preview",
+    "astro": "astro"
+  },
+  "dependencies": {
+    "@astrojs/starlight": "^0.21.2",
+    "astro": "^4.3.5",
+    "sharp": "^0.32.5",
+    "@astrojs/check": "^0.5.10"
+  },
+  "devDependencies": {
+    "@types/bun": "latest",
+    "git-cliff": "^2.1.2",
+    "just-install": "^2.0.1"
+  },
+  "peerDependencies": {
+    "typescript": "^5.4.3"
+  }
+}
