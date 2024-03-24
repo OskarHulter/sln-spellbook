@@ -57,6 +57,16 @@ Check out [Starlight’s docs](https://starlight.astro.build/), read [the Astro 
 
 ## inspiration
 
-This project is inspired by the cyber kill framework. The framework identifies categories of steps that are useful for categorizing scripts according to functionality.
+This project is inspired by the cyber kill framework. The framework identifies categories of steps that are useful for categorizing scripts according to functionality. 
+
+The partials are made to help manage large codebases of orgs.
+
+- recon - find, search, analyze
+- weaponization - composing a partial
+- delivery - run the commands in the right folder
+- exploitation - perform all changes
+- installation - install, build & validate the changed project
+- command & control - standardized partials to be run on several targets
+- actions on objectives - push the changeset if successfull.
 
 [![Cyber kill framework](https://www.lockheedmartin.com/content/dam/lockheed-martin/rms/photo/cyber/THE-CYBER-KILL-CHAIN-body.png.pc-adaptive.1280.medium.png)](https://www.lockheedmartin.com/en-us/capabilities/cyber/cyber-kill-chain.html)
