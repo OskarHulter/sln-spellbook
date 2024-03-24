@@ -55,5 +55,8 @@ All commands are run from the root of the project, from a terminal:
 
 Check out [Starlight’s docs](https://starlight.astro.build/), read [the Astro documentation](https://docs.astro.build), or jump into the [Astro Discord server](https://astro.build/chat).
 
-## inspired by the cyber kill framework
+## inspiration
+
+This project is inspired by the cyber kill framework. The framework identifies categories of steps that are useful for categorizing scripts according to functionality.
+
 [![Cyber kill framework](https://www.lockheedmartin.com/content/dam/lockheed-martin/rms/photo/cyber/THE-CYBER-KILL-CHAIN-body.png.pc-adaptive.1280.medium.png)](https://www.lockheedmartin.com/en-us/capabilities/cyber/cyber-kill-chain.html)
