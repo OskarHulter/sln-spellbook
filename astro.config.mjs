@@ -5,9 +5,9 @@ import starlight from '@astrojs/starlight';
 export default defineConfig({
 	integrations: [
 		starlight({
-			title: 'My Docs',
+			title: 'SLN spellbook',
 			social: {
-				github: 'https://github.com/withastro/starlight',
+				github: 'https://github.com/OskarHulter/sln-spellbook',
 			},
 			sidebar: [
 				{
@@ -20,6 +20,18 @@ export default defineConfig({
 				{
 					label: 'Reference',
 					autogenerate: { directory: 'reference' },
+				},
+				{
+					label: 'Partials',
+					autogenerate: { directory: 'partials' },
+				},
+        {
+					label: 'Snippets',
+					autogenerate: { directory: 'snippets' },
+				},
+        {
+					label: 'Scripts',
+					autogenerate: { directory: 'scripts' },
 				},
 			],
 		}),
