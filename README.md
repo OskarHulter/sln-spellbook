@@ -2,9 +2,6 @@
 
 Spells to imbue your workflow with stresslessness.
 
-inspired by 
-[![Cyber kill framework](https://www.lockheedmartin.com/content/dam/lockheed-martin/rms/photo/cyber/THE-CYBER-KILL-CHAIN-body.png.pc-adaptive.1280.medium.png)](https://www.lockheedmartin.com/en-us/capabilities/cyber/cyber-kill-chain.html)
-
 [![Built with Starlight](https://astro.badg.es/v2/built-with-starlight/tiny.svg)](https://starlight.astro.build)
 
 ```
@@ -57,3 +54,6 @@ All commands are run from the root of the project, from a terminal:
 ## 👀 Want to learn more?
 
 Check out [Starlight’s docs](https://starlight.astro.build/), read [the Astro documentation](https://docs.astro.build), or jump into the [Astro Discord server](https://astro.build/chat).
+
+## inspired by the cyber kill framework
+[![Cyber kill framework](https://www.lockheedmartin.com/content/dam/lockheed-martin/rms/photo/cyber/THE-CYBER-KILL-CHAIN-body.png.pc-adaptive.1280.medium.png)](https://www.lockheedmartin.com/en-us/capabilities/cyber/cyber-kill-chain.html)
