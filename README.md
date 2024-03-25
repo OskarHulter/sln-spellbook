@@ -7,6 +7,11 @@ Spells to imbue your workflow with stresslessness.
 ```
 npm create astro@latest -- --template starlight
 ```
+> "Words are energy and they cast spells, that's why it's called spelling."
+> - Bruce Lee
+
+> “Naming something gives you control over it”
+> - Prof. Patrick Henry Winston, MIT AI Lectures
 
 [![Open in StackBlitz](https://developer.stackblitz.com/img/open_in_stackblitz.svg)](https://stackblitz.com/github/withastro/starlight/tree/main/examples/basics)
 [![Open with CodeSandbox](https://assets.codesandbox.io/github/button-edit-lime.svg)](https://codesandbox.io/p/sandbox/github/withastro/starlight/tree/main/examples/basics)
