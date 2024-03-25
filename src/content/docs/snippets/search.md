@@ -3,6 +3,9 @@ title: Search Snippets
 description: Search commands
 ---
 
+> "Searching, seek and destroy"
+> Metallica
+
 ## File Search
 
 Let's try our first search by looking for all occurrences of the word fast in README.md:
