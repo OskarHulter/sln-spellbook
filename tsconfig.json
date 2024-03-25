@@ -9,9 +9,6 @@
       "@content/*": [
         "src/content/*"
       ],
-      "@components/*": [
-        "src/components/*"
-      ],
       "@assets/*": [
         "src/assets/*"
       ]
@@ -19,12 +16,14 @@
     "baseUrl": ".",
     // Enable latest features
     "lib": [
-      "ESNext"
+      "ESNext",
+      "DOM"
     ],
     "target": "ESNext",
     "module": "ESNext",
     "moduleDetection": "force",
     "jsx": "react-jsx",
+    "allowUmdGlobalAccess": true,
     "allowJs": true,
     // Bundler mode
     "moduleResolution": "bundler",

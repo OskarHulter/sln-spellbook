@@ -12,11 +12,14 @@ export default defineConfig({
 			sidebar: [
 				{
 					label: 'Guides',
+					autogenerate: { directory: 'guides' },
+          /*
 					items: [
 						// Each item here is one entry in the navigation menu.
 						{ label: 'Bun Guide', link: '/guides/bun/' },
 						{ label: 'Httpie Guide', link: '/guides/httpie/' },
 					],
+          */
 				},
 				{
 					label: 'Reference',

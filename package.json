@@ -4,12 +4,21 @@
   "version": "0.0.1",
   "type": "module",
   "scripts": {
+    "styleuse": "doiuse --browsers 'ie >= 9, > 1%, last 2 versions' main.css --json",
+    "styleuse-cat": "cat main.css | doiuse --browsers 'ie >= 9, > 1%, last 2 versions'",
+    "sso": "aws sso login --sso-session=sln-signals",
+    "validate": "bun typecheck && bun lint && bun format && bun test && bun run build",
+    "lint-styles": "bunx stylelint '**/*.{css,scss,less}'",
+    "stylelint-find-rules": "stylelint-find-new-rules [options] <file>",
+    "autoprefix": "bunx postcss postcss-cli autoprefixer",
+    "format": "bunx @biomejs/biome format --write ./src",
+    "lint-check": "bunx @biomejs/biome lint ./src",
+    "lint-ci": "bunx @biomejs/biome ci ./src",
     "dev": "astro dev",
     "start": "astro dev",
     "build": "astro check && astro build",
     "preview": "astro preview",
     "astro": "astro",
-    "validate": "bun run typecheck && bun run lint:ci && bun run build",
     "typecheck": "tsc -p tsconfig.json --noEmit --skipLibCheck --pretty --excludeDirectories node_modules || exit 0",
     "lint": "biome check . --apply",
     "lint:ci": "biome check .",
@@ -18,18 +27,35 @@
     "clean-deps": "rm -rf ./node_modules"
   },
   "dependencies": {
+    "@astrojs/check": "^0.5.10",
     "@astrojs/starlight": "^0.21.2",
     "astro": "^4.3.5",
-    "sharp": "^0.32.5",
-    "@astrojs/check": "^0.5.10"
+    "sharp": "^0.32.5"
   },
   "devDependencies": {
     "@biomejs/biome": "1.6.2",
+    "@csstools/postcss-rebase-url": "^1.0.7",
+    "@happy-dom/global-registrator": "^14.3.6",
     "@tsconfig/node20": "^20.1.3",
     "@types/bun": "latest",
+    "@types/postcss-import": "^14.0.3",
+    "autoprefixer": "^10.4.19",
+    "doiuse": "^6.0.2",
     "git-cliff": "^2.1.2",
+    "inline-css": "^4.0.2",
     "just-install": "^2.0.1",
-    "lefthook": "^1.6.7"
+    "lefthook": "^1.6.7",
+    "postcss": "^8.4.38",
+    "postcss-cli": "^11.0.0",
+    "postcss-html": "^1.6.0",
+    "postcss-import": "^16.1.0",
+    "postcss-jit-props": "^1.0.14",
+    "postcss-plugin": "^1.0.0",
+    "postcss-preset-env": "^9.5.2",
+    "postcss-ts-classnames": "^0.3.0",
+    "posthtml": "^0.16.6",
+    "posthtml-postcss": "^1.0.0",
+    "ts-node": "^10.9.2"
   },
   "peerDependencies": {
     "typescript": "^5.4.3"

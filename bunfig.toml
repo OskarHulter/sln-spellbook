@@ -1,0 +1,6 @@
+[define]
+DO_NOT_TRACK=1
+[test]
+preload = "./happydom.ts"
+[install.lockfile]
+print = "yarn"
