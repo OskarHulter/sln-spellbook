@@ -37,7 +37,9 @@ const blogCollection = defineCollection({
 // 3. Export a single `collections` object to register your collection(s)
 export const collections = {
   docs: defineCollection({ schema: docsSchema() }),
-  'blog': blogCollection,
+  'guides': blogCollection,
   'snippets': snippetCollection,
   'partials': partialCollection,
+  'scripts': snippetCollection,
+  'reference': snippetCollection,
 }

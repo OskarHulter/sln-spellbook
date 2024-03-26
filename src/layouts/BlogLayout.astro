@@ -1,0 +1,59 @@
+---
+import { Card, CardGrid } from '@astrojs/starlight/components'
+import imgReference from '../assets/houston.webp' // imgReference === '/src/image.png'
+import svgReference from '../assets/smiley.svg'
+import CommonHead from '../components/CommonHead.astro'
+---
+
+<html>
+  <head>
+    <CommonHead />
+  </head>
+  <body>
+    <header>SLN Spellbook</header>
+    <!-- Override your page default on a single element -->
+    <main transition:animate='slide'>
+      <img
+        src={imgReference.src}
+        alt='image description'
+      />;
+      <img
+        src={svgReference.src}
+        alt='image description'
+      />;
+      <CardGrid stagger>
+        <Card
+          title='Update content'
+          icon='pencil'
+        >
+          <img
+            src={imgReference.src}
+            alt='image description'
+          />; Edit `src/content/docs/index.mdx` to see this page change.
+        </Card>
+        <Card
+          title='Add new content'
+          icon='add-document'
+        >
+          <img
+            src={imgReference.src}
+            alt='image description'
+          />; Add Markdown or MDX files to `src/content/docs` to create new pages.
+        </Card>
+        <Card
+          title='Configure your site'
+          icon='setting'
+        >
+          Edit your `sidebar` and other config in `astro.config.mjs`.
+        </Card>
+        <Card
+          title='Read the docs'
+          icon='open-book'
+        >
+          Learn more in [the Starlight Docs](https://starlight.astro.build/).
+        </Card>
+      </CardGrid>
+      <slot />
+    </main>
+  </body>
+</html>

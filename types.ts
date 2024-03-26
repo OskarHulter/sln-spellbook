@@ -5,4 +5,4 @@ declare module 'bun' {
   }
 }
 
-export type Todo = any
+export type Todo = unknown

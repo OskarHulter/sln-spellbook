@@ -1,0 +1,122 @@
+---
+// index.js loading JS object
+import OpenProps from 'open-props' // module
+import 'open-props/design-tokens'
+import 'open-props/json'
+import Colors from 'open-props/src/colors'
+/* 3 ways to import */
+import 'open-props/tokens'
+// object notation access is special to OpenProps
+console.info(OpenProps.size1)
+console.info(OpenProps['--size-1'])
+
+console.info(Colors['--indigo-5'])
+import { ViewTransitions } from 'astro:transitions'
+---
+
+<html lang='en'>
+  <head>
+    <title>My Homepage</title>
+    <ViewTransitions />
+  </head>
+  <body>
+    <h1>Welcome to my website!</h1>
+    <header>
+      <h3>Scheme</h3>
+      <form id='theme-switcher'>
+        <div>
+          <input
+            checked
+            type='radio'
+            id='auto'
+            name='theme'
+            value='auto'
+          />
+          <label for='auto'>Auto</label>
+        </div>
+        <div>
+          <input
+            type='radio'
+            id='light'
+            name='theme'
+            value='light'
+          />
+          <label for='light'>Light</label>
+        </div>
+        <div>
+          <input
+            type='radio'
+            id='dark'
+            name='theme'
+            value='dark'
+          />
+          <label for='dark'>Dark</label>
+        </div>
+        <div>
+          <input
+            type='radio'
+            id='dim'
+            name='theme'
+            value='dim'
+          />
+          <label for='dim'>Dim</label>
+        </div>
+        <div>
+          <input
+            type='radio'
+            id='grape'
+            name='theme'
+            value='grape'
+          />
+          <label for='grape'>Grape</label>
+        </div>
+        <div>
+          <input
+            type='radio'
+            id='choco'
+            name='theme'
+            value='choco'
+          />
+          <label for='choco'>Choco</label>
+        </div>
+      </form>
+    </header>
+
+    <main>
+      <section>
+        <div class='surface-samples'>
+          <div class='surface-1 rad-shadow'>1</div>
+          <div class='surface-2 rad-shadow'>2</div>
+          <div class='surface-3 rad-shadow'>3</div>
+          <div class='surface-4 rad-shadow'>4</div>
+        </div>
+      </section>
+
+      <section>
+        <div class='text-samples'>
+          <h1 class='text-1'>
+            <span class='swatch brand rad-shadow'></span>
+            Brand
+          </h1>
+          <h1 class='text-1'>
+            <span class='swatch text-1 rad-shadow'></span>
+            Text Color 1
+          </h1>
+          <h1 class='text-2'>
+            <span class='swatch text-2 rad-shadow'></span>
+            Text Color 2
+          </h1>
+          <br />
+          <p class='text-1'>
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
+            incididunt ut labore et dolore magna aliqua.
+          </p>
+          <p class='text-2'>
+            Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea
+            commodo consequat.
+          </p>
+        </div>
+      </section>
+    </main>
+  </body>
+</html>
