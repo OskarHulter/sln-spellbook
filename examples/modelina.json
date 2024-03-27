@@ -1,0 +1,253 @@
+{
+  "asyncapi": "2.5.0",
+  "info": {
+    "title": "mail subscribers API",
+    "version": "1.0.0",
+    "description": "The Smartysubscribering mail subscribers API allows you\nto remotely manage the city subscribers.\n",
+    "license": {
+      "name": "Apache 2.0",
+      "url": "https://www.apache.org/licenses/LICENSE-2.0"
+    }
+  },
+  "servers": {
+    "mosquitto": {
+      "url": "mqtt://test.mosquitto.org",
+      "protocol": "mqtt"
+    }
+  },
+  "channels": {
+    "subscriber/Created": {
+      "publish": {
+        "summary": "Inform about environmental subscribering conditions for a particular mail subscriber.",
+        "operationId": "onSubscriberCreated",
+        "message": {
+          "name": "subscriberCreated",
+          "payload": {
+            "type": "object",
+            "$id": "subscriberCreated",
+            "properties": {
+              "id": {
+                "type": "integer",
+                "minimum": 0,
+                "description": "Id of the mail subscriber."
+              },
+              "engagementScore": {
+                "type": "integer",
+                "minimum": 0,
+                "description": "subscriber intensity Created in engagementScore."
+              },
+              "email": {
+                "type": "string",
+                "description": "Email address of the subscriber."
+              },
+              "isValidated": {
+                "type": "boolean",
+                "description": "current validation status of subscriber."
+              },
+              "sentAt": {
+                "type": "string",
+                "format": "date-time",
+                "description": "Date and time when the message was sent."
+              }
+            }
+          }
+        }
+      }
+    },
+    "subscriber/Removed": {
+      "publish": {
+        "summary": "Inform about environmental subscribering conditions for a particular mail subscriber.",
+        "operationId": "onSubscriberRemoved",
+        "message": {
+          "name": "subscriberRemoved",
+          "payload": {
+            "type": "object",
+            "$id": "subscriberRemoved",
+            "properties": {
+              "id": {
+                "type": "integer",
+                "minimum": 0,
+                "description": "Id of the mail subscriber."
+              },
+              "sentAt": {
+                "type": "string",
+                "format": "date-time",
+                "description": "Date and time when the message was sent."
+              }
+            }
+          }
+        }
+      }
+    },
+    "template/Created": {
+      "publish": {
+        "summary": "Inform about environmental templateing conditions for a particular mail template.",
+        "operationId": "onTemplateCreated",
+        "message": {
+          "name": "templateCreated",
+          "payload": {
+            "type": "object",
+            "$id": "templateCreated",
+            "properties": {
+              "id": {
+                "type": "integer",
+                "minimum": 0,
+                "description": "Id of the mail template."
+              },
+              "isValidated": {
+                "type": "boolean",
+                "description": "current validation status of email template."
+              },
+              "sentAt": {
+                "type": "string",
+                "format": "date-time",
+                "description": "Date and time when the message was sent."
+              }
+            }
+          }
+        }
+      }
+    },
+    "invite/Created": {
+      "publish": {
+        "summary": "Inform about environmental inviteing conditions for a particular mail invite.",
+        "operationId": "oninviteCreated",
+        "message": {
+          "name": "inviteCreated",
+          "payload": {
+            "type": "object",
+            "$id": "inviteCreated",
+            "properties": {
+              "id": {
+                "type": "integer",
+                "minimum": 0,
+                "description": "Id of the mail invite."
+              },
+              "email": {
+                "type": "string",
+                "description": "Email address to recieve the invite."
+              },
+              "sentAt": {
+                "type": "string",
+                "format": "date-time",
+                "description": "Date and time when the message was sent."
+              }
+            }
+          }
+        }
+      }
+    },
+    "invite/Accepted": {
+      "publish": {
+        "summary": "Inform about environmental inviteing conditions for a particular mail invite.",
+        "operationId": "oninviteAccepted",
+        "message": {
+          "name": "inviteAccepted",
+          "payload": {
+            "type": "object",
+            "$id": "inviteAccepted",
+            "properties": {
+              "id": {
+                "type": "integer",
+                "minimum": 0,
+                "description": "Id of the mail invite."
+              },
+              "email": {
+                "type": "string",
+                "description": "Email address to recieve the invite."
+              },
+              "sentAt": {
+                "type": "string",
+                "format": "date-time",
+                "description": "Date and time when the message was sent."
+              }
+            }
+          }
+        }
+      }
+    },
+    "invite/Cancelled": {
+      "publish": {
+        "summary": "Inform about environmental inviteing conditions for a particular mail invite.",
+        "operationId": "oninviteCancelled",
+        "message": {
+          "name": "inviteCancelled",
+          "payload": {
+            "type": "object",
+            "$id": "inviteCancelled",
+            "properties": {
+              "id": {
+                "type": "integer",
+                "minimum": 0,
+                "description": "Id of the mail invite."
+              },
+              "email": {
+                "type": "string",
+                "description": "Email address to recieve the invite."
+              },
+              "sentAt": {
+                "type": "string",
+                "format": "date-time",
+                "description": "Date and time when the message was sent."
+              }
+            }
+          }
+        }
+      }
+    },
+    "invite/Rejected": {
+      "publish": {
+        "summary": "Inform about environmental inviteing conditions for a particular mail invite.",
+        "operationId": "oninviteRejected",
+        "message": {
+          "name": "inviteRejected",
+          "payload": {
+            "type": "object",
+            "$id": "inviteRejected",
+            "properties": {
+              "id": {
+                "type": "integer",
+                "minimum": 0,
+                "description": "Id of the mail invite."
+              },
+              "email": {
+                "type": "string",
+                "description": "Email address to recieve the invite."
+              },
+              "sentAt": {
+                "type": "string",
+                "format": "date-time",
+                "description": "Date and time when the message was sent."
+              }
+            }
+          }
+        }
+      }
+    },
+    "turn/on": {
+      "subscribe": {
+        "summary": "Command a particular mail subscriber to turn the subscribtion on or off.",
+        "operationId": "turnOn",
+        "message": {
+          "name": "TurnOn",
+          "payload": {
+            "type": "object",
+            "$id": "TurnOn",
+            "properties": {
+              "id": {
+                "type": "integer",
+                "minimum": 0,
+                "description": "Id of the mail subscriber."
+              },
+              "sentAt": {
+                "type": "string",
+                "format": "date-time",
+                "description": "Date and time when the message was sent."
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
