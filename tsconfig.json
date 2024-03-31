@@ -6,17 +6,8 @@
   ],
   "compilerOptions": {
     "paths": {
-      "@components/*": [
-        "src/components/*"
-      ],
-      "@layouts/*": [
-        "src/layouts/*"
-      ],
       "@content/*": [
         "src/content/*"
-      ],
-      "@schemas/*": [
-        "examples/schemas/*"
       ],
       "@assets/*": [
         "src/assets/*"
