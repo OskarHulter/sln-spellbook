@@ -6,8 +6,7 @@
   "scripts": {
     "styleuse": "doiuse --browsers 'ie >= 9, > 1%, last 2 versions' main.css --json",
     "styleuse-cat": "cat main.css | doiuse --browsers 'ie >= 9, > 1%, last 2 versions'",
-    "validate": "bun typecheck && bun lint && bun format && bun test && bun run build",
-    "autoprefix": "bunx postcss postcss-cli autoprefixer",
+    "validate": "bun lint && bun format && bun test && bun run build",
     "format": "bunx @biomejs/biome format --write ./src",
     "lint-check": "bunx @biomejs/biome lint ./src",
     "lint-ci": "bunx @biomejs/biome ci ./src",
@@ -16,7 +15,6 @@
     "build": "astro check && astro build",
     "preview": "astro preview",
     "astro": "astro",
-    "typecheck": "tsc -p tsconfig.json --noEmit --skipLibCheck --pretty --excludeDirectories node_modules || exit 0",
     "lint": "biome check ./src --apply",
     "lint:ci": "biome check ./src",
     "clean": "bun clean-cache && bun clean-deps",
