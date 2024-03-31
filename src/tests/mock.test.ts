@@ -1,4 +1,3 @@
-/// <reference lib="dom" />
 import { expect, mock, test } from 'bun:test'
 
 const random = mock(() => Math.random())

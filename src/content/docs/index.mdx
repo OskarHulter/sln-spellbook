@@ -1,15 +1,11 @@
 ---
 title: Welcome to SLN Spellbook
 description: Get started building your docs site with spellbook.
-layout: ../../layouts/BaseLayout.astro
 template: splash
-author: "Oskar Hulter"
-date: "26 Mar 2024"
 hero:
   tagline: Welcome to SLN spellbook!
   image:
     file: ../../assets/houston.webp
-    file: ../../assets/smiley.svg
   actions:
     - text: Bun API Tips
       link: /guides/bun/
@@ -19,21 +15,12 @@ hero:
       link: /guides/httpie/
       icon: right-arrow
       variant: primary
-    - text: Mail Snippets
-      link: /snippets/snippets/
-      icon: right-arrow
-      variant: primary
-    - text: Read the Starlight docs
-      link: https://starlight.astro.build
+    - text: Read the code
+      link: https://github.com/OskarHulter/sln-spellbook
       icon: external
 ---
 import { Card, CardGrid } from '@astrojs/starlight/components';
 
-All frontmatter properties are available as props to an Astro layout component.
-
-The `layout` property is the only special one provided by Astro.
-
-You can use it in both Markdown and MDX files located within `src/pages/`.
 ## Next steps
 
 <CardGrid stagger>

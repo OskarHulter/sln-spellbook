@@ -16,7 +16,7 @@
         "src/content/*"
       ],
       "@schemas/*": [
-        "src/schemas/*"
+        "examples/schemas/*"
       ],
       "@assets/*": [
         "src/assets/*"

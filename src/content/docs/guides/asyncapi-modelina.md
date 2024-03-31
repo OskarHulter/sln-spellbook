@@ -3,6 +3,7 @@ title: AsyncAPI Modelina guide
 description: An introductory guide to the openAPI compliant modeling tool modelina.
 ---
 
+```md
 [![AsyncAPI Modelina](./docs/img/readme-banner.png)](https://www.modelina.org)
 [![blackbox pipeline status](<https://img.shields.io/github/actions/workflow/status/asyncapi/modelina/blackbox-testing.yml?label=blackbox%20testing>)](https://github.com/asyncapi/modelina/actions/workflows/blackbox-testing.yml?query=branch%3Amaster++)
 [![Coverage Status](https://coveralls.io/repos/github/asyncapi/modelina/badge.svg?branch=master)](https://coveralls.io/github/asyncapi/modelina?branch=master)
@@ -444,3 +445,4 @@ Thanks go out to these wonderful people ([emoji key](https://allcontributors.org
 <!-- ALL-CONTRIBUTORS-LIST:END -->
 
 This project follows the [all-contributors](https://github.com/all-contributors/all-contributors) specification. Contributions of any kind are welcome!
+```

@@ -1,10 +1,9 @@
 ---
 title: Amazon SQS - Simple Queuing Service - FIFO vs Standard Queue - AWS Certification Cheat Sheet
-date: Jun 10, 2020 
 description: An introductory guide to the most common bun APIs.
-length: 4 minute read
 ---
-
+length: 4 minute read
+date: Jun 10, 2020 
 Let’s get a quick overview of Amazon SQS from an AWS certification perspective. We will look at important certification questions regarding Amazon SQS.
 
 You will learn
