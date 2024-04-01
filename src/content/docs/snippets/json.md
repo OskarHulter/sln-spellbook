@@ -30,3 +30,23 @@ echo '{"name": "world"}' | fx 'Object.keys'
 echo '{"name": "world"}' | fx .name '`Hello, ${x}!`'
 
 #That's it. So simple!
+```
+Streaming
+```sh
+
+# fx supports JSON streaming as well. You can use it for parsing logs, etc.
+kubectl logs ... | fx .message
+
+# Or just concatenate a few JSON files with cat and pipe to fx.
+cat *.json | fx .length
+
+# 🎨 Themes support
+# fx supports themes as well. You can change colors and indent.
+export FX_THEME=1
+
+# To test all themes type next command:
+fx --themes
+
+```
+
+I hope you enjoy using fx!
