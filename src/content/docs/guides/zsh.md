@@ -16,6 +16,7 @@ exec zsh
 git clone --depth 1 https://github.com/junegunn/fzf.git ~/.fzf
 ~/.fzf/install
 ```
+
 git: cd ~/.fzf && git pull && ./install
 brew: brew update; brew upgrade fzf
 

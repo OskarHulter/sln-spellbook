@@ -3,14 +3,16 @@ title: Fzf fuzzy finder
 description: A guide in my new Starlight docs site.
 ---
 
-Usage
+## Usage
+
 fzf will launch interactive finder, read the list from STDIN, and write the selected item to STDOUT.
 
 find * -type f | fzf > selected
 Without STDIN pipe, fzf will traverse the file system under the current directory to get the list of files.
 
 vim $(fzf)
-Note
+
+## Note
 
 You can override the default behavior
 
@@ -22,12 +24,12 @@ A more robust solution would be to use xargs but we've presented the above as it
 
 fzf --print0 | xargs -0 -o vim
 
-
 Fuzzy completion for bash and zsh
 Files and directories
 Fuzzy completion for files and directories can be triggered if the word before the cursor ends with the trigger sequence, which is by default **.
 
-COMMAND [DIRECTORY/][FUZZY_PATTERN]**<TAB>
+<!-- COMMAND [DIRECTORY/][FUZZY_PATTERN]**TAB -->
+
 ```sh
 # Files under the current directory
 # - You can select multiple items with TAB key
@@ -98,6 +100,7 @@ _fzf_comprun() {
 ```
 
 ## Interactive ripgrep integration
+
 The following example uses fzf as the selector interface for ripgrep. We bound reload action to change event, so every time you type on fzf, the ripgrep process will restart with the updated query string denoted by the placeholder expression {q}. Also, note that we used --disabled option so that fzf doesn't perform any secondary filtering.
 
 ```sh
@@ -129,9 +132,8 @@ export FZF_DEFAULT_OPTS='--height 40% --layout=reverse --border'
 
 ```
 
-
-
 ## Tips
+
 Respecting .gitignore
 You can use fd, ripgrep, or the silver searcher to traverse the file system while respecting .gitignore.
 
@@ -166,12 +168,15 @@ git grep --line-number . |
 ```
 
 If you want the command to follow symbolic links and don't want it to exclude hidden files, use the following command:
+
 ```sh
+
 export FZF_DEFAULT_COMMAND='fd --type f --strip-cwd-prefix --hidden --follow --exclude .git'
+
 ```
+
 fzf Theme Playground
 fzf Theme Playground created by Vitor Mello is a webpage where you can interactively create fzf themes.
-
 
 ## Log tailing
 
