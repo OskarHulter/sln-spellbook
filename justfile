@@ -194,14 +194,41 @@ setup-npm:
 setup-aws:
 	git config list
 
-setup-actions:
-	git config list
+ss:
+	freeze artichoke.hs --border.width 1 --border.color "#515151" --border.radius 8
+  
+http-load:
+  oha http://localhost:3000
 
-setup-precommit:
-	git config list
+s-r:
+export GIT_PAGER='<highlighter-of-your-choice>'
+find "$FIND_ARGS" | sad '<pattern>' '<replacement>'
 
-setup-benchmark:
-	git config list
+r-brew:
+  gum log --structured --level debug "select file to remove..." name file.txt | brew list | gum choose --no-limit | xargs brew uninstall
 
-validate:
-	git config list
+p-h:
+  git log --oneline | gum filter | cut -d' ' -f1 # | copy
+
+p-multi:
+  SESSION=$(tmux list-sessions -F \#S | gum filter --placeholder "Pick session...")
+  tmux switch-client -t $SESSION || tmux attach -t $SESSION
+
+c-i:
+  git commit -m "$(gum input --width 50 --placeholder "Summary of changes")" \
+           -m "$(gum write --width 80 --placeholder "Details of changes (CTRL+D to finish)")"
+
+e-pr:
+	gh pr list | cut -f1,2 | gum choose | cut -f1 | xargs gh pr checkout
+
+e-file:
+	$EDITOR $(gum filter)
+  
+# Format some markdown  
+gum-format:
+  gum format -- "# Gum Formats" "- Markdown" "- Code" "- Template" "- Emoji"
+  echo "# Gum Formats\n- Markdown\n- Code\n- Template\n- Emoji" | gum format
+  cat main.go | gum format -t code
+  echo '{{ Bold "Tasty" }} {{ Italic "Bubble" }} {{ Color "99" "0" " Gum " }}' \
+    | gum format -t template
+  echo 'I :heart: Bubble Gum :candy:' | gum format -t emoji

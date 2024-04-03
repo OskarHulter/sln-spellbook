@@ -1,0 +1,10 @@
+procs:
+  nvim:
+    cmd: ["nvim"]
+  server:
+    shell: "nodemon server.js"
+  webpack: "webpack serve"
+  tests:
+    shell: "bun test -w"
+    env:
+      NODE_ENV: test

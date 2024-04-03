@@ -1,0 +1,99 @@
+variables:
+  sshconnection: ssh -i ~/my-key-pair.pem ec2-user@1.2.3.4
+textboxes:
+  - title: SSH
+    pty: true
+    init: $sshconnection
+    sample: top
+runcharts:
+  - title: Search engine response time
+    rate-ms: 500        # sampling rate, default = 1000
+    scale: 2            # number of digits after sample decimal point, default = 1
+    legend:
+      enabled: true     # enables item labels, default = true
+      details: false    # enables item statistics: cur/min/max/dlt values, default = true
+    items:
+      - label: GOOGLE
+        sample: curl -o /dev/null -s -w '%{time_total}'  https://www.google.com
+        color: 178      # 8-bit color number, default one is chosen from a pre-defined palette
+      - label: YAHOO
+        sample: curl -o /dev/null -s -w '%{time_total}'  https://search.yahoo.com
+      - label: BING
+        sample: curl -o /dev/null -s -w '%{time_total}'  https://www.bing.com
+itextboxes:
+  - title: Docker containers stats
+    sample: docker stats --no-stream --format "table {{.Name}}\t{{.CPUPerc}}\t{{.MemPerc}}\t{{.MemUsage}}\t{{.NetIO}}\t{{.BlockIO}}\t{{.PIDs}}"
+# sparklines:
+#   - title: CPU usage
+#     sample: ps -A -o %cpu | awk '{s+=$1} END {print s}
+# textboxes:
+#   - title: MongoDB polling
+#     rate-ms: 500
+#     init: mongo --quiet --host=localhost test # executes only once to start the interactive session
+#     sample: Date.now();                       # executes with a required rate, in scope of the interactive session
+#     transform: echo result = $sample          # executes in scope of local session, $sample variable is available for transformation
+asciiboxes:
+  - title: UTC time
+    rate-ms: 500        # sampling rate, default = 1000
+    font: 3d            # font type, default = 2d
+    border: false       # border around the item, default = true    
+    color: 43           # 8-bit color number, default is white
+    sample: env TZ=UTC date +%r
+# runcharts:
+#   - title: SEARCH ENGINE RESPONSE TIME (sec)
+#     rate-ms: 200
+#     items:
+#       - label: GOOGLE
+#         sample: curl -o /dev/null -s -w '%{time_total}'  https://www.google.com
+#       - label: YAHOO
+#         sample: curl -o /dev/null -s -w '%{time_total}'  https://search.yahoo.com
+sparklines:
+  - title: CPU usage
+    rate-ms: 200
+    scale: 0
+    sample: ps -A -o %cpu | awk '{s+=$1} END {print s}'
+  - title: Free memory pages
+    rate-ms: 200
+    scale: 0
+    sample: memory_pressure | grep 'Pages free' | awk '{print $3}'
+triggers:
+  - title: Latency threshold exceeded
+    condition: echo "$prev < 0.3 && $cur > 0.3" |bc -l  # expects "1" as TRUE indicator
+    actions:
+      terminal-bell: true  # standard terminal bell, default = false
+      sound: true   # NASA quindar tone, default = false
+      visual: true  # visual notification on top of the component area, default = false
+      script: 'say alert: ${label} latency exceeded ${cur} second' # an arbitrary script, which can use $cur, $prev and $label variables
+gauges:
+  - title: Minute progress
+    rate-ms: 500        # sampling rate, default = 1000
+    scale: 2            # number of digits after sample decimal point, default = 1
+    percent-only: false # toggle display of the current value, default = false
+    color: 178          # 8-bit color number, default one is chosen from a pre-defined palette
+    cur:
+      sample: date +%S  # sample script for current value
+    max:
+      sample: echo 60   # sample script for max value
+    min:
+      sample: echo 0    # sample script for min value
+  - title: Year progress
+    cur:
+      sample: date +%j
+    max:
+      sample: echo 365
+    min:
+      sample: echo 0
+      
+barcharts:
+  - title: Local network activity
+    rate-ms: 500        # sampling rate, default = 1000
+    scale: 0            # number of digits after sample decimal point, default = 1
+    items:
+      - label: UDP bytes in
+        sample: nettop -J bytes_in -l 1 -m udp | awk '{sum += $4} END {print sum}'
+      - label: UDP bytes out
+        sample: nettop -J bytes_out -l 1 -m udp | awk '{sum += $4} END {print sum}'
+      - label: TCP bytes in
+        sample: nettop -J bytes_in -l 1 -m tcp | awk '{sum += $4} END {print sum}'
+      - label: TCP bytes out
+        sample: nettop -J bytes_out -l 1 -m tcp | awk '{sum += $4} END {print sum}'

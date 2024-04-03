@@ -1,10 +1,14 @@
 import { defineConfig } from 'astro/config';
 import starlight from '@astrojs/starlight';
 import sitemap from '@astrojs/sitemap';
+import { codeInspectorPlugin } from 'code-inspector-plugin';
 
 // https://astro.build/config
 export default defineConfig({
   site: 'https://sln-spellbook.com',
+  vite: {
+    plugins: [codeInspectorPlugin({ bundler: 'vite' })],
+  },
 	integrations: [
 		starlight({
 			title: 'SLN spellbook',

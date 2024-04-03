@@ -1,77 +1,162 @@
-# sln-spellbook
+# Viddy
 
-Spells to imbue your workflow with stresslessness.
+<p align="center">
+<img src="images/logo.png" width="200" alt="viddy" title="viddy" />
+</p>
 
-[![Built with Starlight](https://astro.badg.es/v2/built-with-starlight/tiny.svg)](https://starlight.astro.build)
+Modern `watch` command.
+
+Viddy well, gopher. Viddy well.
+
+## Demo
+
+<p align="center">
+<img src="images/demo.gif" width="100%" alt="viddy" title="viddy" />
+</p>
+
+
+## Features
+
+* Basic features of original watch command.
+    * Execute command periodically, and display the result.
+    * color output.
+    * diff highlight.
+* Time machine mode. 😎
+    * Rewind like video.
+    * Go to the past, and back to the future.
+* See output in pager.
+* Vim like keymaps.
+* Search text.
+* Suspend and restart execution.
+* Run command in precise intervals forcibly.
+* Support shell alias
+    * See detail https://github.com/sachaos/viddy/issues/2#issuecomment-904002053
+* Customize keymappings.
+* Customize color.
+
+## Install
+
+### Mac
+
+#### [Homebrew](https://brew.sh)
+
+```shell
+brew install viddy
+```
+
+#### [MacPorts](https://www.macports.org)
+
+```shell
+sudo port install viddy
+```
+
+### Windows
+
+#### [Scoop](https://scoop.sh/)
+
+To install Viddy on Windows, first install the Scoop package manager, and then run the commands below.
+
+**NOTE**: The git package is required in order to add additional Scoop "buckets".
 
 ```
-npm create astro@latest -- --template starlight
-```
-> "Words are energy and they cast spells, that's why it's called spelling."
-> - Bruce Lee
-
-> “Naming something gives you control over it”
-> - Prof. Patrick Henry Winston, MIT AI Lectures
-
-[![Open in StackBlitz](https://developer.stackblitz.com/img/open_in_stackblitz.svg)](https://stackblitz.com/github/withastro/starlight/tree/main/examples/basics)
-[![Open with CodeSandbox](https://assets.codesandbox.io/github/button-edit-lime.svg)](https://codesandbox.io/p/sandbox/github/withastro/starlight/tree/main/examples/basics)
-[![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/new/clone?repository-url=https%3A%2F%2Fgithub.com%2Fwithastro%2Fstarlight%2Ftree%2Fmain%2Fexamples%2Fbasics&project-name=my-starlight-docs&repository-name=my-starlight-docs)
-
-> 🧑‍🚀 **Seasoned astronaut?** Delete this file. Have fun!
-
-## 🚀 Project Structure
-
-Inside of your Astro + Starlight project, you'll see the following folders and files:
-
-```
-.
-├── public/
-├── src/
-│   ├── assets/
-│   ├── content/
-│   │   ├── docs/
-│   │   └── config.ts
-│   └── env.d.ts
-├── astro.config.mjs
-├── package.json
-└── tsconfig.json
+scoop install git
+scoop bucket add extras
+scoop install extras/viddy
 ```
 
-Starlight looks for `.md` or `.mdx` files in the `src/content/docs/` directory. Each file is exposed as a route based on its file name.
+### Linux
 
-Images can be added to `src/assets/` and embedded in Markdown with a relative link.
+```shell
+wget -O viddy.tar.gz https://github.com/sachaos/viddy/releases/download/v0.4.0/viddy_Linux_x86_64.tar.gz && tar xvf viddy.tar.gz && mv viddy /usr/local/bin
+```
 
-Static assets, like favicons, can be placed in the `public/` directory.
+#### ArchLinux ( AUR )
 
-## 🧞 Commands
+```shell
+yay -S viddy
+```
+Alternatively you can use the [AUR Git repo](https://aur.archlinux.org/packages/viddy/) directly
 
-All commands are run from the root of the project, from a terminal:
+#### Alpine Linux
 
-| Command                   | Action                                           |
-| :------------------------ | :----------------------------------------------- |
-| `npm install`             | Installs dependencies                            |
-| `npm run dev`             | Starts local dev server at `localhost:4321`      |
-| `npm run build`           | Build your production site to `./dist/`          |
-| `npm run preview`         | Preview your build locally, before deploying     |
-| `npm run astro ...`       | Run CLI commands like `astro add`, `astro check` |
-| `npm run astro -- --help` | Get help using the Astro CLI                     |
+After [enabling the community repository](https://wiki.alpinelinux.org/wiki/Enable_Community_Repository):
 
-## 👀 Want to learn more?
+```shell
+apk add viddy
+```
 
-Check out [Starlight’s docs](https://starlight.astro.build/), read [the Astro documentation](https://docs.astro.build), or jump into the [Astro Discord server](https://astro.build/chat).
+### [asdf version manager](https://asdf-vm.com)
 
-## inspiration
+```shell
+asdf plugin add viddy
+asdf install viddy latest
+asdf global viddy latest
+```
 
-This project is inspired by the cyber kill framework. The framework identifies categories of steps that are useful for categorizing scripts according to functionality. 
+### Go
 
-The partials are made to help manage large codebases of orgs.
+```shell
+go install github.com/sachaos/viddy@latest
+```
 
-- recon - find, search, analyze
-- weaponization - composing a partial
-- delivery - run the commands in the right folder
-- exploitation - perform all changes
-- installation - install, build & validate the changed project
-- command & control - standardized partials to be run on several targets
-- actions on objectives - push the changeset if successfull.
+### Other
 
-[![Cyber kill framework](https://www.lockheedmartin.com/content/dam/lockheed-martin/rms/photo/cyber/THE-CYBER-KILL-CHAIN-body.png.pc-adaptive.1280.medium.png)](https://www.lockheedmartin.com/en-us/capabilities/cyber/cyber-kill-chain.html)
+Download from [release page](https://github.com/sachaos/viddy/releases).
+
+## Keymaps
+
+| key       |                                            |
+|-----------|--------------------------------------------|
+| SPACE     | Toggle time machine mode                   |
+| s         | Toggle suspend execution                   |
+| b         | Toggle ring terminal bell                  |
+| d         | Toggle diff                                |
+| t         | Toggle header display                      |
+| ?         | Toggle help view                           |
+| /         | Search text                                |
+| j         | Pager: next line                           |
+| k         | Pager: previous line                       |
+| Control-F | Pager: page down                           |
+| Control-B | Pager: page up                             |
+| g         | Pager: go to top of page                   |
+| Shift-G   | Pager: go to bottom of page                |
+| Shift-J   | (Time machine mode) Go to the past         |
+| Shift-K   | (Time machine mode) Back to the future     |
+| Shift-F   | (Time machine mode) Go to more past        |
+| Shift-B   | (Time machine mode) Back to more future    |
+| Shift-O   | (Time machine mode) Go to oldest position  |
+| Shift-N   | (Time machine mode) Go to current position |
+
+## Configuration
+
+Install your config file on `$XDG_CONFIG_HOME/viddy.toml`
+On macOS, the path is `~/Library/Application\ Support/viddy.toml`.
+
+```toml
+[general]
+no_shell = false
+shell = "zsh"
+shell_options = ""
+
+[keymap]
+timemachine_go_to_past = "Down"
+timemachine_go_to_more_past = "Shift-Down"
+timemachine_go_to_future = "Up"
+timemachine_go_to_more_future = "Shift-Up"
+timemachine_go_to_now = "Ctrl-Shift-Up"
+timemachine_go_to_oldest = "Ctrl-Shift-Down"
+
+[color]
+background = "white" # Default value is inherit from terminal color.
+```
+
+## What is "viddy" ?
+
+"viddy" is Nadsat word meaning to see.
+Nadsat is fictional argot of gangs in the violent book and movie "A Clockwork Orange".
+
+## Credits
+
+The gopher's logo of viddy is licensed under the Creative Commons 3.0 Attributions license.
+
+The original Go gopher was designed by [Renee French](https://reneefrench.blogspot.com/).
