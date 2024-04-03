@@ -32,7 +32,7 @@ abbr list-commands
 abbr import-aliases [<TYPE>] [--dry-run] [(--quiet | --quieter)] [(-f | --force)]
 abbr [(git | g)] [<SCOPE>] [--dry-run] [(--quiet | --quieter)] [(-f | --force)] ABBREVIATION=EXPANSION
 
-
+which abbr
 ```
 
 ## Further reading
