@@ -192,7 +192,8 @@ setup-npm:
 	git config list
 
 setup-aws:
-	git config list
+	aws --version
+  aws configure list
 
 ss:
 	freeze artichoke.hs --border.width 1 --border.color "#515151" --border.radius 8
