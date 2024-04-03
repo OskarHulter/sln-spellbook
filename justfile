@@ -201,8 +201,8 @@ http-load:
   oha http://localhost:3000
 
 s-r:
-export GIT_PAGER='<highlighter-of-your-choice>'
-find "$FIND_ARGS" | sad '<pattern>' '<replacement>'
+  export GIT_PAGER='<highlighter-of-your-choice>'
+  find "$FIND_ARGS" | sad '<pattern>' '<replacement>'
 
 r-brew:
   gum log --structured --level debug "select file to remove..." name file.txt | brew list | gum choose --no-limit | xargs brew uninstall
@@ -224,11 +224,3 @@ e-pr:
 e-file:
 	$EDITOR $(gum filter)
   
-# Format some markdown  
-gum-format:
-  gum format -- "# Gum Formats" "- Markdown" "- Code" "- Template" "- Emoji"
-  echo "# Gum Formats\n- Markdown\n- Code\n- Template\n- Emoji" | gum format
-  cat main.go | gum format -t code
-  echo '{{ Bold "Tasty" }} {{ Italic "Bubble" }} {{ Color "99" "0" " Gum " }}' \
-    | gum format -t template
-  echo 'I :heart: Bubble Gum :candy:' | gum format -t emoji
