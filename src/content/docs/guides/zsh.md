@@ -6,11 +6,13 @@ description: A guide in my new Starlight docs site.
 ## plugins
 
 ```sh
+git clone https://github.com/nmap/nmap ~/home/user/tools/nmap --single-branch --branch <main> --depth 1
 git clone https://github.com/junegunn/fzf-git.sh.git ~/home/user/.config/fzf-git --single-branch --branch <main> --depth 1
 git clone https://github.com/olets/zsh-abbr ~/home/user/.config/zsh-plugins/zsh-abbr --single-branch --branch <main> --depth 1
 git clone https://github.com/zdharma-continuum/fast-syntax-highlighting ~/home/user/.config/zsh-plugins/fsh --single-branch --branch <main> --depth 1
 source ~/home/user/.config/zsh-plugins/zsh-abbr/zsh-abbr.zsh
 source ~/home/user/.config/zsh-plugins/fsh/fast-syntax-highlighting.plugin.zsh
+source ~/home/user/tools/security/nmap
 exec zsh
 
 git clone --depth 1 https://github.com/junegunn/fzf.git ~/.fzf
@@ -33,6 +35,8 @@ abbr import-aliases [<TYPE>] [--dry-run] [(--quiet | --quieter)] [(-f | --force)
 abbr [(git | g)] [<SCOPE>] [--dry-run] [(--quiet | --quieter)] [(-f | --force)] ABBREVIATION=EXPANSION
 
 which abbr
+
+
 ```
 
 ## Further reading
