@@ -1,6 +1,6 @@
 ---
-title: An introduction to mail layout
-description: An introductory guide to the most common mail layouts.
+title: An introduction to html
+description: An introductory guide to the most common html tags.
 ---
 
 This is your last chance.

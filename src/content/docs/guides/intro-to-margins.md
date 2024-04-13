@@ -1,6 +1,6 @@
 ---
-title: An introduction to mail layout
-description: An introductory guide to the most common mail layouts.
+title: An introduction to margins
+description: An introductory guide to margins and padding in CSS.
 ---
 
 This is your last chance.
@@ -8,14 +8,25 @@ After this, there is no turning back.
 
 You close this tab - the story ends, you wake up in your bed and believe whatever you want to believe.
 You continue on - you stay in Wonderland and I show you how deep the rabbit hole goes.
+[![Box Model](https://i0.wp.com/css-tricks.com/wp-content/uploads/2021/02/thebox.png?w=570&ssl=1)
 
-Welcome to the mystical realm of legacy email clients.
+See it with your own eyes
+Wanna see every single “box” that makes up a page? Try putting this in the stylesheet temporarily:
+
+```css
+* {
+   outline: 1px solid red !important;
+}
+```
+
+[![Box Model Visualized](https://i0.wp.com/css-tricks.com/wp-content/uploads/2021/02/all-is-a-box.jpg?w=570&ssl=1)
 
 ## Quick guide
 
 Write CSS in the css files, then inline the styles using inline-css when you're ready.
 
 Get started with these tips:
+
 - `<table>` instead of `<div>`,
 - when using tables, don’t forget `border="0" cellpadding="0" cellspacing="0"`.
 - `#FFFFFF` instead of `#FFF`,
@@ -30,6 +41,7 @@ Get started with these tips:
 ## Preserving images
 
 Images should include the following attributes:
+
 - `src`
 - `alt`
 - `width`
@@ -71,15 +83,15 @@ Inserted inside the opening <td> tag is the inline CSS that styles the table cel
 
 ### tools
 
-email subject heading emulator: https://codepen.io/awoodall/full/XbpMbo/
+email subject heading emulator: <https://codepen.io/awoodall/full/XbpMbo/>
 
 ### references
 
-https://webdesign.tutsplus.com/build-an-html-email-template-from-scratch--webdesign-12770a
+<https://webdesign.tutsplus.com/build-an-html-email-template-from-scratch--webdesign-12770a>
 
-https://www.smashingmagazine.com/2017/01/introduction-building-sending-html-email-for-web-developers/
+<https://www.smashingmagazine.com/2017/01/introduction-building-sending-html-email-for-web-developers/>
 
-https://litmus.com/builder/ac11b59
+[box sizing](https://css-tricks.com/almanac/properties/b/box-sizing/)
 
 ### Still doubting your email skills?
 

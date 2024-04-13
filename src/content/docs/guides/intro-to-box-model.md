@@ -1,18 +1,18 @@
 ---
-title: Intro to Cyberkill framework
-description: An explaination of how to apply it as a defender for a large org.
+title: Intro to Box Model 
+description: An explaination of the CSS box model and how the model is interpreted by the browser.
 ---
 
 > “If you know the enemy and know yourself, you need not fear the result of a hundred battles."
 > - Sun Tzu, The Art of War
 
-The Cyber Kill Chain is a concept introduced by Lockheed Martin that represents the stages or steps involved in a cyberattack. It serves as a framework for understanding and analyzing the different phases of an attack, from the initial reconnaissance to achieving the attacker’s objective.
+The Box Model Chain is a concept introduced by Lockheed Martin that represents the stages or steps involved in a cyberattack. It serves as a framework for understanding and analyzing the different phases of an attack, from the initial reconnaissance to achieving the attacker’s objective.
 
-[![Cyber kill framework](https://www.lockheedmartin.com/content/dam/lockheed-martin/rms/photo/cyber/THE-CYBER-KILL-CHAIN-body.png.pc-adaptive.1280.medium.png)](https://www.lockheedmartin.com/en-us/capabilities/cyber/cyber-kill-chain.html)
+[![Box Model](https://i0.wp.com/css-tricks.com/wp-content/uploads/2021/02/thebox.png?w=570&ssl=1)
 
 ## Key Steps
 
-The Cyber Kill Chain typically consists of the following stages:
+The Box Model Chain typically consists of the following stages:
 
 1. Reconnaissance: Gathering information about the target.
 
@@ -30,7 +30,7 @@ The Cyber Kill Chain typically consists of the following stages:
 
 ## How does it help?
 
-The Cyber Kill Chain model helps organizations by providing a structured framework to:
+The Box Model Chain model helps organizations by providing a structured framework to:
 
 Visualize and understand the stages of an attack.
 Identify and focus on critical points in the attack process.
@@ -39,7 +39,7 @@ Enhance incident response capabilities by recognizing where in the chain an atta
 
 ## Reconnaissance
 
-The first stage of the Cyber Kill Chain is “Reconnaissance." This stage involves the attacker gathering information about the target, such as identifying potential vulnerabilities, key personnel, network configurations, and security measures in place. This phase can include passive techniques like open-source intelligence (OSINT) gathering or active scanning and probing of the target’s system.
+The first stage of the Box Model Chain is “Reconnaissance." This stage involves the attacker gathering information about the target, such as identifying potential vulnerabilities, key personnel, network configurations, and security measures in place. This phase can include passive techniques like open-source intelligence (OSINT) gathering or active scanning and probing of the target’s system.
 
 ## Weaponization
 
@@ -59,11 +59,11 @@ The “Delivery” stage is where the attacker transmits a malicious payload to 
 
 ## Actions on objective
 
-The “Actions on Objective” stage is the final step in the Cyber Kill Chain, representing the attacker’s ultimate goal, which could include data theft, system disruption, or other malicious activities. It signifies the completion of the attack’s primary objective.
+The “Actions on Objective” stage is the final step in the Box Model Chain, representing the attacker’s ultimate goal, which could include data theft, system disruption, or other malicious activities. It signifies the completion of the attack’s primary objective.
 
 ## How to defend
 
-Organizations can apply security solutions and strategies to detect and prevent cyberattacks at various stages of the Cyber Kill Chain:
+Organizations can apply security solutions and strategies to detect and prevent cyberattacks at various stages of the Box Model Chain:
 
 ### Using Reconnaissance
 
@@ -85,4 +85,4 @@ Utilize network monitoring and behavior analysis to identify unusual communicati
 
 Implement data loss prevention (DLP) and encryption to protect valuable assets.
 
-Besides proactive defense strategies to mitigate attackers from gaining an initial foothold in the system, security teams should also be sufficiently prepared in incident response strategies to deal with the later stages in the Cyber Kill Chain.
+Besides proactive defense strategies to mitigate attackers from gaining an initial foothold in the system, security teams should also be sufficiently prepared in incident response strategies to deal with the later stages in the Box Model Chain.

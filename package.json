@@ -41,10 +41,20 @@
     "inline-css": "^4.0.2",
     "just-install": "^2.0.1",
     "lefthook": "^1.6.10",
+    "open-props": "^1.7.2",
     "playwright": "^1.43.1",
     "ts-dedent": "^2.2.0"
   },
   "peerDependencies": {
     "typescript": "^5.4.3"
-  }
+  },
+  "trustedDependencies": [
+    "@biomejs/biome",
+    "@hyperjump/json-pointer",
+    "@hyperjump/json-schema",
+    "@hyperjump/json-schema-core",
+    "@hyperjump/pact",
+    "just-install",
+    "protobufjs"
+  ]
 }
