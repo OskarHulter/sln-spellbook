@@ -38,6 +38,69 @@ public static void Main()
         }    
 ```
 
+```c#
+using System;
+using System.Drawing;
+using System.Resources;
+
+[Serializable()] public class Automobile
+{
+    private string carMake;
+    private string carModel;
+    private int carYear;
+    private int carDoors;
+    private int carCylinders;
+
+    public Automobile(string make, string model, int year) :
+        this(make, model, year, 0, 0)
+    {
+    }
+
+    public Automobile(string make, string model, int year,
+        int doors, int cylinders)
+    {
+        carMake = make;
+        carModel = model;
+        carYear = year;
+        carDoors = doors;
+        carCylinders = cylinders;
+    }
+
+    public string Make => carMake;
+
+    public string Model => carModel;
+
+    public int Year => carYear;
+
+    public int Doors => carDoors;
+
+    public int Cylinders => carCylinders;
+}
+
+public class LocalizationResourceFactory
+{
+    public static void Main()
+    {
+        // Instantiate an Automobile object.
+        Automobile car1 = new Automobile("Ford", "Model N", 1906, 0, 4);
+        Automobile car2 = new Automobile("Ford", "Model T", 1909, 2, 4);
+        // Define a resource file named CarResources.resx.
+        using (ResXResourceWriter resx = new ResXResourceWriter(@".\CarResources.resx"))
+        {
+            resx.AddResource("Title", "Classic American Cars");
+            resx.AddResource("HeaderString1", "Make");
+            resx.AddResource("HeaderString2", "Model");
+            resx.AddResource("HeaderString3", "Year");
+            resx.AddResource("HeaderString4", "Doors");
+            resx.AddResource("HeaderString5", "Cylinders");
+            resx.AddResource("Information", SystemIcons.Information);
+            resx.AddResource("EarlyAuto1", car1);
+            resx.AddResource("EarlyAuto2", car2);
+        }
+    }
+}
+```
+
 ## Further reading
 
 - Read [about how-to guides](https://diataxis.fr/how-to-guides/) in the Diátaxis framework
