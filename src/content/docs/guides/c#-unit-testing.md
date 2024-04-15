@@ -9,6 +9,20 @@ use source generator to implement interceptors for you.
 ## Filter Helper
 
 ```c#
+
+ public State PerformOperation(Operation command) =>
+           command switch
+           {
+             Operation.SystemTest => RunDiagnostics(),
+             Operation.Start => StartSystem(),
+             Operation.Stop => StopSystem(),
+             Operation.Reset => ResetToReady(),
+             _ => throw new ArgumentException("Invalid enum value for command", nameof(command)),
+           };
+
+```
+
+```c#
     public class TemplateContentParser
     {
         private string template;
@@ -56,6 +70,136 @@ public class ProcessOrder
         }
     }
 
+public class ApplyGlutenAndNutOptionsRecipeStrategy : IRecipeStrategy
+    {
+        public Pizza Apply(OrderItem orderItem)
+        {
+            var pizza = new Pizza();
+            RecipeRepository.GetFor(orderItem.PizzaName).RecipeIngredients.Groups.OrderBy(ing => ing.Index).ForEach(
+                group =>
+                {
+                    group.Ingredients.First(ing =>
+                    {
+                        (ing.IsDefault !orderItem.NoNuts && !orderItem.IsGlutenFree) || (
+                            (!orderItem.NoNuts || ing.IsNutFree == orderItem.NoNuts) &&
+                            (!orderItem.IsGlutenFree || ing.IsGlutenFree == orderItem.IsGlutenFree))
+                    }).OrderBy(ing => ing.Index).ForEach(ing => { _recipeWorker.AddIngredient(ing.Code); });
+                } return pizza;
+        }
+    }
+
+    public class ApplyStandardRecipeStrategy : IRecipeStrategy
+    {
+        public Pizza Apply(OrderItem orderItem)
+        {
+            var pizza = new Pizza();
+            RecipeRepository.GetFor(orderItem.PizzaName).RecipeIngredients.Groups.OrderBy(ing > ing.Index).ForEach(
+                group =>
+                {
+                    group.Ingredients.First(ing => ing.IsDefault).OrderBy(ing => ing.Index).ForEach(ing =>
+                    {
+                        _recipeWorker.AddIngredient(ing.Code);
+                    });
+                } return pizza;
+        }
+    }
+    
+    
+    public class RecipeStrategyFactory
+    {
+        private const bool GF = true;
+        private const bool NoNuts = true;
+        private const bool? GF_NA = null;
+        private const bool? NoNuts_NA = null
+
+
+        private List<RecipeSelectionCriteria> _selectionCriteria = new List<RecipeSelectionCriteria>
+            {
+                // has both Glutten and Nut Free options
+                new RecipeSelectionCriteria("Meatlovers", GF_NA, NoNuts_NA, typeof(ApplyGlutenAndNutOptionsRecipeStrategy));
+
+                //no recipe for Nut-Free
+                new RecipeSelectionCriteria("SatayChickien", GF_NA, !NoNuts, typeof(ApplyGlutenOptionsRecipeStrategy));
+
+                //no recipe for Gluten Free or Nut-Free
+                new RecipeSelectionCriteria("NewPizza", !GF, !NoNuts, typeof(ApplyStandardRecipeStrategy));
+            }
+
+        public static IRecipeStrategy GetStrategy(OrderItem orderItem)
+        {
+            var criteria = _selectionCriteria.SingleOrDefault(crtr =>
+                crts.Name == orderItem.PizzaName
+                && (!crts.IsGlutenFree.HasValue
+                    || crts.IsGlutenFree.Value == orderItem.Options.IsGlutenFree)
+                && (!crts.NoNuts.HasValue
+                    || crts.IsGlutenFree.Value == orderItem.Options.NoNuts)
+            );
+
+            if (criteria == null)
+            {
+                throw new ArgumentOutOfRange("No recipe found for the pizza");
+            }
+
+            return Factory.Resolve(criteria.RecipeType);
+        }
+
+        private class RecipeSelectionCriteria
+        {
+            public string Name { get; set; }
+            public bool? IsGlutenFree { get; set; }
+            public bool? NoNuts { get; set; }
+            public IRecipe RecipeStrategy { get; set; }
+        }
+    }
+
+
+
+public class RecipeStrategyFactory
+    {
+        private const bool GF = true;
+        private const bool NoNuts = true;
+        private const bool? GF_NA = null;
+        private const bool? NoNuts_NA = null
+
+
+        private List<RecipeSelectionCriteria> _selectionCriteria = new List<RecipeSelectionCriteria>
+            {
+                // has both Glutten and Nut Free options
+                new RecipeSelectionCriteria("Meatlovers", GF_NA, NoNuts_NA, typeof(ApplyGlutenAndNutOptionsRecipeStrategy));
+
+                //no recipe for Nut-Free
+                new RecipeSelectionCriteria("SatayChickien", GF_NA, !NoNuts, typeof(ApplyGlutenOptionsRecipeStrategy));
+
+                //no recipe for Gluten Free or Nut-Free
+                new RecipeSelectionCriteria("NewPizza", !GF, !NoNuts, typeof(ApplyStandardRecipeStrategy));
+            }
+
+        public static IRecipeStrategy GetStrategy(OrderItem orderItem)
+        {
+            var criteria = _selectionCriteria.SingleOrDefault(crtr =>
+                crts.Name == orderItem.PizzaName
+                && (!crts.IsGlutenFree.HasValue
+                    || crts.IsGlutenFree.Value == orderItem.Options.IsGlutenFree)
+                && (!crts.NoNuts.HasValue
+                    || crts.IsGlutenFree.Value == orderItem.Options.NoNuts)
+            );
+
+            if (criteria == null)
+            {
+                throw new ArgumentOutOfRange("No recipe found for the pizza");
+            }
+
+            return Factory.Resolve(criteria.RecipeType);
+        }
+
+        private class RecipeSelectionCriteria
+        {
+            public string Name { get; set; }
+            public bool? IsGlutenFree { get; set; }
+            public bool? NoNuts { get; set; }
+            public IRecipe RecipeStrategy { get; set; }
+        }
+    }
 ```
 
 ```c#
@@ -134,6 +278,7 @@ public class ProcessOrder
     }
 
 ```
+
 ```c#
 namespace StresslessnessOrg.Logging.Schemas
 {
@@ -188,6 +333,7 @@ public static void Main()
                     auto.Make, auto.Model, auto.Year,
                     auto.Doors, auto.Cylinders);
         }    
+
 ```
 
 ```c#
