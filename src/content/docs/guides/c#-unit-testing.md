@@ -6,6 +6,125 @@ description: A guide to unit testing with C#
 System.ValueTuple over System.Tuple?
 use source generator to implement interceptors for you.
 
+## Chaining Behaviors
+
+Delegates allow developers to add as many handlers to a delegate instance utilizing the += operator. Let’s walk through the invocation behavior of each type.
+
+```c#
+
+Action Hello;
+
+Hello = () =>  Console.WriteLine("Hello");
+Hello += () => Console.WriteLine("World");
+Hello += () => Console.WriteLine(".NET & Khalid\n");
+
+Hello();
+
+
+Func<string> groceries;
+
+groceries = () =>
+{
+    Console.WriteLine("1 Potato");
+    return "1 Potato";
+};
+groceries += () =>
+{
+    Console.WriteLine("2 Apples");
+    return "2 Apples";
+};
+groceries += () =>
+{
+    Console.WriteLine("3 Bagels");
+    return "3 Bagels";
+};
+
+// invoking groceries
+var pick = groceries();
+Console.WriteLine($"The pick is {pick}\n");
+
+
+foreach (var @delegate in groceries.GetInvocationList())
+{
+    var item = (Func<string>) @delegate;
+    Console.WriteLine($"purchasing: {item()}");
+}
+
+
+Predicate<string> isItCake = 
+    s =>
+    {
+        Console.WriteLine($"Checking {s} with \"cake\"");
+        return s?.Contains("cake", StringComparison.OrdinalIgnoreCase) == true;
+    };
+
+isItCake += 
+    s =>
+    {
+        Console.WriteLine($"Checking {s} with \"bread\"");
+        return s?.Contains("bread", StringComparison.OrdinalIgnoreCase) == true;
+    };
+
+var bananaBread = "banana bread";
+var result =
+   isItCake(bananaBread);
+   
+   
+foreach (var @delegate in isItCake.GetInvocationList())
+{
+    var item = (Predicate<string>) @delegate;
+    Console.WriteLine($"is it Cake : {item(bananaBread)}");
+}
+
+```
+
+A delegate is a type that represents a reference to a method with a particular set of parameters and return type.
+
+Delegates are one of the fundamental building blocks of the .NET framework, and they received a significant upgrade with the introduction of the Language Integrated Query (LINQ) syntax. You may also here delegates referred to as Lambda Expressions.
+
+There are three recognized Lambda expressions: Actions, Funcs, and Predicates.
+
+An Action is an expression that takes no parameters but executes a statement.
+
+These clases are useful for functions:
+
+- Action: no params, no return.
+- Func: any number of params, must return.
+- Predicate: one param, must return a bool.
+
+all of these lambda expressions inherit their behavior from the delegate type.
+
+```c#
+
+public static Expression<Func<T, bool>> ConcatLambdaExpression<T>(Expression<Func<T, bool>> firstExpression, Expression<Func<T, bool>> secondExpression)
+{
+    var invokedThird = Expression.Invoke(secondExpression, firstExpression.Parameters.Cast<Expression>());
+    var finalExpression = Expression.Lambda<Func<T, bool>>(Expression.AndAlso(firstExpression.Body, invokedThird), firstExpression.Parameters);
+    return finalExpression;
+}
+
+public PersonDTO GetAll()
+{
+    Expression<Func<Person, bool>> expression = x => x != null;
+    expression = x => x.Name == "John";
+
+    Expression<Func<Person, bool>> pred = x => x.LastName == "Doe" || x.LastName == "Wick";
+
+    //result of expression would be:  
+    ////expression = x.Name == "John" && (x => x.LastName == "Doe" || x.LastName == "Wick")
+
+    expression = Utilities.ConcatLambdaExpression(expression, pred);
+
+    var result = Context.PersonEntity.Where(expression);
+
+    //your code mapping results to PersonDTO
+    ///resultMap...            
+
+    return resultMap;
+}
+
+```
+
 ## Filter Helper
 
 ```c#
@@ -615,4 +734,4 @@ namespace StresslessnessOrg.Logging.Utils
 
 ## Further reading
 
-- Read [about how-to guides](https://diataxis.fr/how-to-guides/) in the Diátaxis framework
+- [Chain Actions, Funcs, and Predicates In .NET](https://khalidabuhakmeh.com/chain-lambdas-in-dotnet) Chain Actions, Funcs, and Predicates In .NET
