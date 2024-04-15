@@ -2,7 +2,61 @@
 title: C# unit testing
 description: A guide to unit testing with C#
 ---
+
+System.ValueTuple over System.Tuple?
+use source generator to implement interceptors for you.
+
 ## Filter Helper
+
+```c#
+    public class TemplateContentParser
+    {
+        private string template;
+        private bool isActive = true;
+        public Func<bool> ToggleFeature { get; set; } = () => TemplateContentParser.isActive;
+        public string ReadFileContent(string path)
+        {
+            using var resource = GetType().Assembly.GetManifestResourceStream(path);
+            template = new StreamReader(resource ?? throw new InvalidOperationException()).ReadToEnd();
+            return template;
+        }
+    }
+    
+public Func<string> GetActiveTemplateId{ get;  set; } = () => 
+    isAbTestActive ? 
+    activeTestTemplateId : 
+    controlTemplateId;
+          
+public async Task<Tuple<ObjectId, string>>() => (ObjectId templateAId);
+  
+public Func<int> GetActiveSection{ get;  set; } = () => isAbTestActive ? );
+    // public async Task<Tuple<ObjectId, string>>() => (ObjectId templateAId);
+
+
+
+public class ProcessOrder
+    {
+        public List<Pizza> Execute(PizzaOrder order)
+        {
+            var pizzas = order.Select(orderItem => _recipeFactory.Get(orderItem).Apply());
+            return pizzas;
+        }
+    }
+
+    public class RecipeFactory : IRecipeFactory
+    {
+        public IRecipe Get(string pizzaName)
+        {
+            switch (pizzaName)
+            {
+                case "MEATLOVERS": return new Meatlovers();
+                case "SATAYCHICKEN": return new SatayChicken();
+                default:
+            }
+        }
+    }
+
+```
 
 ```c#
     using System;
