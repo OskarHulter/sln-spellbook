@@ -1,5 +1,7 @@
 ---
-title: C# unit testing
+title: dotnet
+
+´unit testing
 description: A guide to unit testing with C#
 ---
 
@@ -8,7 +10,7 @@ use source generator to implement interceptors for you.
 
 ## Refactoring many small methods
 
-1. seperate methods into seperate classes
+1. separate methods into classes
 2. import them into the composing class
 
 ```c#
@@ -439,15 +441,6 @@ namespace StresslessnessOrg.Logging.Schemas
 ```
 
 ```c#
-
-
-```
-
-```c#
-
-
-```
-
 public static void Main()
         {
             // The example displays the following output:
@@ -760,7 +753,7 @@ namespace StresslessnessOrg.Logging.Utils
 
 ## Further reading
 
-- [linq](https://gist.github.com/xwipeoutx/962b205324017c000c75899a8b5016d9)
+- [LINQ](https://gist.github.com/xwipeoutx/962b205324017c000c75899a8b5016d9)
 - [Bogus](https://github.com/bchavez/Bogus)
 - [FluentValidation](https://github.com/FluentValidation/FluentValidation)
 - [fake it easy](https://fakeiteasy.github.io/)
