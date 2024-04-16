@@ -6,6 +6,30 @@ description: A guide to unit testing with C#
 System.ValueTuple over System.Tuple?
 use source generator to implement interceptors for you.
 
+## Refactoring many small methods
+
+1. seperate methods into seperate classes
+2. import them into the composing class
+
+```c#
+public sealed class AwesomeUrlSaver 
+{
+  
+  private readonly UrlNormalizer _urlNormalizer;
+  private readonly ContentWriter _contentWriter;
+  
+  public AwesomeUrlSaver(
+    UrlNormalizer urlNormalizer,
+    ContentWriter contentWriter)
+  {
+    _contentWriter = contentWriter;
+    _urlNormalizer = urlNormalizer; 
+  }
+  
+}
+
+```
+
 ## Chaining Behaviors
 
 Delegates allow developers to add as many handlers to a delegate instance utilizing the += operator. Let’s walk through the invocation behavior of each type.
@@ -93,6 +117,8 @@ These clases are useful for functions:
 - Predicate: one param, must return a bool.
 
 all of these lambda expressions inherit their behavior from the delegate type.
+
+Chaining is a powerful feature of .NET delegates and many developers may not realize that when passed an Action, Func, or Predicate they may be getting more than one. When writing libraries that pass these types around, it may be necessary for library authors to check the GetInvocationList and react accordingly: throw an exception, invoke each instance and aggregate the results, or do nothing different.
 
 ```c#
 
@@ -734,4 +760,9 @@ namespace StresslessnessOrg.Logging.Utils
 
 ## Further reading
 
+- [linq](https://gist.github.com/xwipeoutx/962b205324017c000c75899a8b5016d9)
+- [Bogus](https://github.com/bchavez/Bogus)
+- [FluentValidation](https://github.com/FluentValidation/FluentValidation)
+- [fake it easy](https://fakeiteasy.github.io/)
+- [elastic-net](https://github.com/elastic/elasticsearch-net)
 - [Chain Actions, Funcs, and Predicates In .NET](https://khalidabuhakmeh.com/chain-lambdas-in-dotnet) Chain Actions, Funcs, and Predicates In .NET
