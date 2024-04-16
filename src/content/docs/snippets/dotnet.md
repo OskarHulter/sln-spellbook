@@ -3,6 +3,11 @@ title: getting started with dotnet
 description: getting started commands
 ---
 
+ms ext hosting abs
+serilog settings config
+serilog settings appsettings
+serilog sink console
+
 ## Redirected Input
 
 https://learn.microsoft.com/en-us/dotnet/core/install/upgrade
