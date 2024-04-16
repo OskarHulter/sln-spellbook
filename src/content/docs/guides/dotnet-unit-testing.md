@@ -1,7 +1,5 @@
 ---
-title: dotnet
-
-´unit testing
+title: dotnet unit testing
 description: A guide to unit testing with C#
 ---
 
