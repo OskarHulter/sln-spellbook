@@ -21,6 +21,7 @@ bun run env
 ```
 
 ## Import a JSON file
+
 ```json
 {
   "name": "bun",
@@ -42,7 +43,9 @@ data.author.name; // => "John Dough"
 ```
 
 ## serialize & deserialize in bun:jsc
+
 To save a JavaScript value into an ArrayBuffer & back, use serialize and deserialize from the "bun:jsc" module.
+
 ```ts
 import { serialize, deserialize } from "bun:jsc";
 
@@ -53,21 +56,24 @@ console.log(obj); // => { foo: "bar" }
 
 ## Get the file name of the current file
 
-### /a/b/c.ts
+### /a/b/c.ts file
+
 ```ts
 import.meta.file; // => "c.ts"
 ```
 
 ## Get the directory of the current file
 
-### /a/b/c.ts
+### /a/b/c.ts dir
+
 ```ts
 import.meta.dir; // => "/a/b"
 ```
 
 ## Get the absolute path of the current file
 
-### /a/b/c.ts
+### /a/b/c.ts path
+
 ```ts
 import.meta.path; // => "/a/b/c.ts"
 ```
@@ -98,7 +104,7 @@ unlinkSync(path);
 await unlink(path);
 ```
 
-## Convert a ReadableStream to a string 
+## Convert a ReadableStream to a string
 
 ```ts
 const stream = new ReadableStream();
@@ -123,7 +129,7 @@ const encoded = btoa(data); // => "aGVsbG8gd29ybGQ="
 const decoded = atob(encoded); // => "hello world"
 ```
 
-## Escape an HTML string 
+## Escape an HTML string
 
 ```ts
 Bun.escapeHTML("<script>alert('Hello World!')</script>");

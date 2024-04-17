@@ -3,9 +3,10 @@ import starlight from '@astrojs/starlight';
 import sitemap from '@astrojs/sitemap';
 import { codeInspectorPlugin } from 'code-inspector-plugin';
 
-// https://astro.build/config
+// https://astro.build/config 'https://sln-spellbook.com',
 export default defineConfig({
-  site: 'https://sln-spellbook.com',
+  site: 'https://OskarHulter.github.io',
+  base: '/sln-spellbook',
   vite: {
     plugins: [codeInspectorPlugin({ bundler: 'vite' })],
   },
@@ -18,7 +19,7 @@ export default defineConfig({
 			sidebar: [
 				{
 					label: 'Guides',
-					autogenerate: { directory: 'guides' },
+					autogenerate: { directory: 'sln-spellbook/guides' },
           /*
 					items: [
 						// Each item here is one entry in the navigation menu.
@@ -27,21 +28,25 @@ export default defineConfig({
 					],
           */
 				},
+        {
+          label: 'Introductions',
+          autogenerate: { directory: 'sln-spellbook/introductions' },
+        },
 				{
 					label: 'Reference',
-					autogenerate: { directory: 'reference' },
+					autogenerate: { directory: 'sln-spellbook/reference' },
 				},
 				{
 					label: 'Partials',
-					autogenerate: { directory: 'partials' },
+					autogenerate: { directory: 'sln-spellbook/partials' },
 				},
         {
 					label: 'Snippets',
-					autogenerate: { directory: 'snippets' },
+					autogenerate: { directory: 'sln-spellbook/snippets' },
 				},
         {
 					label: 'Scripts',
-					autogenerate: { directory: 'scripts' },
+					autogenerate: { directory: 'sln-spellbook/scripts' },
 				},
 			],
 		}),

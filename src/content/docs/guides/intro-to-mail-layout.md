@@ -16,6 +16,7 @@ Welcome to the mystical realm of legacy email clients.
 Write CSS in the css files, then inline the styles using inline-css when you're ready.
 
 Get started with these tips:
+
 - `<table>` instead of `<div>`,
 - when using tables, don’t forget `border="0" cellpadding="0" cellspacing="0"`.
 - `#FFFFFF` instead of `#FFF`,
@@ -30,6 +31,7 @@ Get started with these tips:
 ## Preserving images
 
 Images should include the following attributes:
+
 - `src`
 - `alt`
 - `width`
@@ -71,15 +73,15 @@ Inserted inside the opening <td> tag is the inline CSS that styles the table cel
 
 ### tools
 
-email subject heading emulator: https://codepen.io/awoodall/full/XbpMbo/
+email subject heading emulator: <https://codepen.io/awoodall/full/XbpMbo/>
 
 ### references
 
-https://webdesign.tutsplus.com/build-an-html-email-template-from-scratch--webdesign-12770a
+<https://webdesign.tutsplus.com/build-an-html-email-template-from-scratch--webdesign-12770a>
 
-https://www.smashingmagazine.com/2017/01/introduction-building-sending-html-email-for-web-developers/
+<https://www.smashingmagazine.com/2017/01/introduction-building-sending-html-email-for-web-developers/>
 
-https://litmus.com/builder/ac11b59
+<https://litmus.com/builder/ac11b59>
 
 ### Still doubting your email skills?
 
