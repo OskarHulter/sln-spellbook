@@ -749,6 +749,54 @@ namespace StresslessnessOrg.Logging.Utils
 
 ```
 
+## AutoDataAttribute fixture factory for mocking
+
+```c#
+
+[AttributeUsage(AttributeTargets.Method)]
+public class CustomAutoDataAttribute : AutoDataAttribute
+{
+    public CustomAutoDataAttribute() : base(FixtureHelpers.CreateFixture)
+    {
+    }
+}
+
+[AttributeUsage(AttributeTargets.Method, AllowMultiple = true)]
+public class CustomInlineAutoDataAttribute : InlineAutoDataAttribute
+{
+    public CustomInlineAutoDataAttribute(params object[] args) : base(FixtureHelpers.CreateFixture, args)
+    {
+    }
+}
+
+internal static class FixtureHelpers
+{
+    public static IFixture CreateFixture()
+    {
+        var fixture = new Fixture();
+
+        fixture.Customize(new AutoMoqCustomization
+        {
+            ConfigureMembers = true,
+            GenerateDelegates = true
+        });
+
+        fixture.AddGrpcSupport();
+
+        fixture.Customizations.Add(new MockRelay(new ExactTypeSpecification(typeof(CustomerResourceAccessClient))));
+
+        fixture.Customizations.Add(new MockRelay(new ExactTypeSpecification(typeof(ProviderResourceAccessClient))));
+
+        fixture.Customizations.Add(new TypeRelay(typeof(ILogger<>), typeof(TestContextLoggerAdapter<>)));
+
+        fixture.Customize<PatientModel>(o => o.With(p => p.Email, (MailAddress mail) => mail.Address).With(p => p.PersonalIdentityNumber, (SwedishPersonalIdentityNumber ssn) => ssn.ToFormattedString(SwedishPersonalIdentityNumberFormats.TwelveDigits)));
+
+        return fixture;
+    }
+}
+
+```
+
 ## Further reading
 
 - [LINQ](https://gist.github.com/xwipeoutx/962b205324017c000c75899a8b5016d9)
