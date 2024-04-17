@@ -33,6 +33,9 @@ Wanna see every single “box” that makes up a page? Try putting this in the s
 
 ```
 
+![What a view](https://unsplash.com/photos/silhouette-of-mountains-next-to-body-of-water-2-MmXpeN8YE)
+![what a beetle](https://unsplash.com/photos/green-and-yellow-ceramic-vase-HfhjNA0TYYU)
+
 ### tools
 
 ### references

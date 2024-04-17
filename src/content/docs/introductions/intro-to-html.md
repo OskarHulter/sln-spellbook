@@ -3,40 +3,6 @@ title: An introduction to html
 description: An introductory guide to the most common html tags.
 ---
 <!-- markdownlint-disable MD033 -->
-This is your last chance.
-After this, there is no turning back.
-
-You close this tab - the story ends, you wake up in your bed and believe whatever you want to believe.
-You continue on - you stay in Wonderland and I show you how deep the rabbit hole goes.
-
-Welcome to the mystical realm of legacy email clients.
-
-## Quick guide
-
-Write CSS in the css files, then inline the styles using inline-css when you're ready.
-
-Get started with these tips:
-
-- `<table>` instead of `<div>`,
-- when using tables, don’t forget `border="0" cellpadding="0" cellspacing="0"`.
-- `#FFFFFF` instead of `#FFF`,
-- `padding` instead of `margin`,
-- CSS2 instead of CSS3,
-- HTML4 instead of HTML5,
-- `background-color` instead of `background`,
-- HTML attributes instead of CSS,
-- inline CSS instead of style sheets or `<style>` blocks.
-- fontsize max to avoid zoom
-
-## Preserving images
-
-Images should include the following attributes:
-
-- `src`
-- `alt`
-- `width`
-- `height`
-- `border`
 
 ## List of common tags
 
@@ -383,14 +349,6 @@ By mastering these tags, you’ll be able to create a wide range of web pages an
 
 ### tools
 
-email subject heading emulator: <https://codepen.io/awoodall/full/XbpMbo/>
-
 ### references
 
 [top tag intro reference](https://medium.com/@devsumitg/top-html-tags-every-web-developer-should-know-653092889eb4)
-
-### Still doubting your email skills?
-
-"You have to let it all go, Neo. Fear, doubt, and disbelief. Free your mind."
-
-Oskar Hulter
