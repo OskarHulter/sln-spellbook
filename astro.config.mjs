@@ -19,7 +19,7 @@ export default defineConfig({
 			sidebar: [
 				{
 					label: 'Guides',
-					autogenerate: { directory: 'sln-spellbook/guides' },
+					autogenerate: { directory: '/guides' },
           /*
 					items: [
 						// Each item here is one entry in the navigation menu.
@@ -30,23 +30,23 @@ export default defineConfig({
 				},
         {
           label: 'Introductions',
-          autogenerate: { directory: 'sln-spellbook/introductions' },
+          autogenerate: { directory: '/introductions' },
         },
 				{
 					label: 'Reference',
-					autogenerate: { directory: 'sln-spellbook/reference' },
+					autogenerate: { directory: '/reference' },
 				},
 				{
 					label: 'Partials',
-					autogenerate: { directory: 'sln-spellbook/partials' },
+					autogenerate: { directory: '/partials' },
 				},
         {
 					label: 'Snippets',
-					autogenerate: { directory: 'sln-spellbook/snippets' },
+					autogenerate: { directory: '/snippets' },
 				},
         {
 					label: 'Scripts',
-					autogenerate: { directory: 'sln-spellbook/scripts' },
+					autogenerate: { directory: '/scripts' },
 				},
 			],
 		}),
