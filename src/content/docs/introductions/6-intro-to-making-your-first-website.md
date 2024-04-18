@@ -72,9 +72,10 @@ Wanna see every single “box” that makes up a page? Try putting this in the s
 > "You have to let it all go, Neo. Fear, doubt, and disbelief. Free your mind."
 > Morpheus, the Matrix
 
-### tools
-
 ### references
 
+[the best css syntax resource](https://developer.mozilla.org/en-US/docs/Web/CSS/Reference)
+
 [the css box model](https://css-tricks.com/the-css-box-model/)
+
 [box sizing](https://css-tricks.com/almanac/properties/b/box-sizing/)

@@ -353,4 +353,6 @@ Included in VS Code by default:[Emmet: the shortcut to tags](https://docs.emmet.
 
 ### references
 
+[the best html syntax resource](https://developer.mozilla.org/en-US/docs/Web/HTML/Reference)
+
 [top tag intro reference](https://medium.com/@devsumitg/top-html-tags-every-web-developer-should-know-653092889eb4)

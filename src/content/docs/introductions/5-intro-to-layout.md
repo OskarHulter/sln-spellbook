@@ -21,7 +21,6 @@ description: An introductory guide to the most common layout elements.
 </body>
 ```
 
-
-### tools
-
 ### references
+
+[the best css syntax resource](https://developer.mozilla.org/en-US/docs/Web/CSS/Reference)

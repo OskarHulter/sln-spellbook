@@ -215,6 +215,8 @@ They should always start at 1 and get higher numbers as they decrease in priorit
 
 ### references
 
+[the best html syntax resource](https://developer.mozilla.org/en-US/docs/Web/HTML/Reference)
+
 [getting started with HTML](https://developer.mozilla.org/en-US/docs/Learn/HTML/Introduction_to_HTML/Getting_started)
 
 [common tags reference](https://medium.com/@devsumitg/top-html-tags-every-web-developer-should-know-653092889eb4)
