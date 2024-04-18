@@ -1,5 +1,5 @@
 ---
-title: An introduction to html
+title: Step 2 - html speed run
 description: An introductory guide to the most common html tags.
 ---
 <!-- markdownlint-disable MD033 -->

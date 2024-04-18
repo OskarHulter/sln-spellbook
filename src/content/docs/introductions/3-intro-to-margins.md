@@ -22,20 +22,8 @@ Wanna see every single “box” that makes up a page? Try putting this in the s
 [![Box Model Visualized](https://i0.wp.com/css-tricks.com/wp-content/uploads/2021/02/all-is-a-box.jpg?w=570&ssl=1)
 
 ```html
-<table role="presentation" width="600" align="center" cellpadding="0" cellspacing="0" border="0">
-    <tr>
-        <td width="100%" style="font-family:Arial, sans-serif; font-size:16px; line-height:1.5em; color:#333333; padding:2em; background-color:#e4e4e4;">
 
-            <p style="margin:0;">Paragraph of text.</p>
-
-        </td>
-    </tr>
-</table>
 ```
-
-### tools
-
-email subject heading emulator: <https://codepen.io/awoodall/full/XbpMbo/>
 
 ### references
 
