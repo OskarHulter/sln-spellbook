@@ -3,79 +3,39 @@ title: Step 1 - An introduction to mental models
 description: An introductory guide to the most useful mental models to understand systems.
 ---
 
-- Images for presentation
+## Intro to mental models
 
-Inspiration:
+As you learn more about coding you will notice that a few
 
-- external data-vis script
-- comp lib showcase
-
-The only failure is not trying.
-Try to follow your own curiousity
-Unintended results are a chance to learn,
-Therefore they will actually be more valuable than success.
-
-Imagine that each instruction you try to follow had unintended results.
-A lot of people might feel disappointed or get a feeling that I don't belong. That is your ego speaking and it's trying to protect you from a negative feeling. But that will hinder your growth as you seek to minimize the discomfort of identifying with your result.
-
-If this sounds familiar, remind yourself that you are not your results - while we can affect the outcome, the final result is based on probability.
-
-Then you must remind yourself:
-I'm not failing, the feedback accelerates the process that I care about: learning.
+### Names - labels
 
 "to name a thing is to control it"
 
-Concepts
-Names - labels
-Boxes - groups
-Trees - relationship between boxes
-Root - box at the point of origin
-Branch - the connection between root and other boxes.
-Leaf - the final box at the end of a branch
+![real labels image](https://unsplash.com/photos/assorted-sticker-lot-ljZ2KRh_gZM)
 
-Just flip the tree upside down, because the hierarchy of a real tree is inverted to capture the value in the right order.
-Water first, then light.
+### Boxes - groups
 
-Events - change
+![real box image](https://unsplash.com/photos/brown-cardboard-boxes-on-white-metal-rack-BNBA1h-NgdY)
 
-Communication
+### Trees - relationship between boxes
 
-Themes of themes
-Color
-Font
-Margin
+![real tree image](https://unsplash.com/photos/green-leaf-tree-under-blue-sky-tGTVxeOr_Rs)
 
-Pull theme example from mailrender,
+Just flip the real tree upside down, and we get the common data structure.
+The hierarchy of a real tree is inverted to capture the value in the right order. Water first, then light.
 
-Challenge:
-Start from scratch in shared repo.
-Build the ai-scenario or
-Get started on your personal website
+We try to consider similar questions when we design it-systems.
 
-Optional requirements:
+![CS tree image](https://media.geeksforgeeks.org/wp-content/uploads/20221129094006/Treedatastructure.png)
 
-- change the logo to an image
+### Root - box at the point of origin. The start of the structure
 
-- add theming
+![real root image](https://unsplash.com/photos/brown-tree-trunk-with-green-leaves-OicnHt5EahE)
 
-```html
-<body>
-  <header class="header">
-    x
-    <ul>
-    </ul>
-  </header>
+### Branch - the connection between the root and boxes
 
-  <main class="main">
-    y
-  </main>
-
-  <footer class="footer">
-    z
-  </footer>
-</body>
-```
-
-### tools
+### Leaf - the final box at the end of a branch
 
 ### references
+
+[The formal definition of complex adaptive systems](https://en.wikipedia.org/wiki/Complex_adaptive_system)
