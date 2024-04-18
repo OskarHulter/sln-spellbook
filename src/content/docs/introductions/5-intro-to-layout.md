@@ -1,5 +1,5 @@
 ---
-title: An introduction to CSS layout
+title: Step 5 - An introduction to CSS layout
 description: An introductory guide to the most common layout elements.
 ---
 

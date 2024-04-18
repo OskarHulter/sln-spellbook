@@ -4,351 +4,217 @@ description: An introductory guide to the most common html tags.
 ---
 <!-- markdownlint-disable MD033 -->
 
-## List of common tags
+### Tag Syntax
 
-- Most of the tags you encounter at a typical website will be one of these.
-- Other tags are mainly used for enhancing accessibility, as they provide additional context that allows assistive technology like screen readers to interpret the website.
-
-## Intro
-
-The most basic HTML page looks like this:
+lowercase attributes, quote values:
 
 ```html
- <!DOCTYPE html>
- <html>
-   <head>
-   </head>
-   <body>
-   </body>
- </html>
+<tag attributename="value" />
+
+<ul>
+  <li>First</li>
+  <li>Second</li>
+  <li>Third</li>
+</ul>
+
+<img 
+  src="/demo.jpg" 
+  alt="description" 
+  height="48" 
+  width="100" 
+  longdesc="desc.txt"
+/>
 ```
 
-If you copy this into a text file with the suffix .html and then open it in a browser, you will see a completely blank webpage.
+### Basic Tags
 
-Different sections of the webpage are opened and closed with paired tags, like <tag> and </tag>, respectively. Every page has a <head></head> section which loads the necessary resources and a <body></body> section that contains the main content of the webpage.
+At least 80% of the web uses the following tags:
 
-External files can be referenced from the html document in various ways.
-This example refers to a script that can be used to visualize data.
+```html
+
+<!-- HTML
+Comment -->
+
+<!-- 
+The default container for grouping elements
+-->
+<div>Block element</div>
+
+<!-- 
+Heading elements are used for big titles. 
+They should always start at 1 and get higher numbers as they decrease in priority, the lower down the page you get.
+-->
+
+<h1>Page title</h1>
+<h2>Subheading</h2>
+<h3>Sub subheading</h3>
+<h4>Quaternary heading</h4>
+
+<p>text</p>
+<strong>Bold text</strong>
+<em>Italic text</em>
+<abbr title="Hypertext Markup Language">HTML</abbr>
+
+<img src="/demo.jpg" alt="description" height="48" width="100">
+
+<a href="https://html6.com/" target="_blank" rel="nofollow">
+  Click here
+</a>
+
+<a href="mailto:me@ruwix.com?Subject=Hi%20mate" target="_top">Send Mail</a>
+
+<a href="#footer">Jump to footnote</a>
+<br />
+<a name="footer"></a>Footnote content
+
+<a href="https://HTMLforBabies.com/"
+   target="_blank" rel="external nofollow">
+      <img src="/demo.jpg" alt="baby"
+           width="100" height="48" /><br />
+      HTML For Babies
+</a>
+
+<br />
+<hr />
+```
+
+| tag | Meaning                                                                                                                                                                 |
+| --- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| div | The default generic box element. If you are a beginner, focus on this first. As we get better, we will use less divs to make the elements themselves more descriptive.  |
+| h1  |                                                                                                                                                                         |
+
+### Head Tags
+
+```html
+<!doctype html>
+<html lang="en" class="no-js">
+ <head>
+  <meta charset="utf-8">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="canonical" href="https://htmlcheatsheet.com/" />
+  <title>HTML CheatSheet</title>
+  <meta name="description" content="A brief page description">
+  <meta name="keywords" content="html,cheatsheet" />
+  <meta property="fb:admins" content="YourFacebookUsername" />
+  <meta property="og:title" content="HTML CheatSheet" />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://htmlcheatsheet.com/" />
+  <meta property="og:image" content="https://htmlcheatsheet.com/images/html-cheatsheet.jpg" />
+  <meta property="og:description" content="A brief page description" />
+  <link rel="apple-touch-icon" href="apple-touch-icon.png">
+  <link rel="alternate" hreflang="es" href="https://htmlcheatsheet.com/spanish/" />
+  <link rel="stylesheet" href="/styles.css">
+  <script src="/script.js"></script>
+ </head>
+```
+
+### Blank page container
 
 ```html
 <!DOCTYPE html>
- <html>
-   <head>
-     <script src="https://d3js.org/d3.v7.min.js"></script>
-     <script src="https://d3js.org/d3-selection-multi.v1.min.js"></script>
-     <link rel="stylesheet" href="styles.css">
-   </head>
-   <body>
-     <svg height=500 width=900></svg>
-   </body>
-   <script src="example.js"></script>
- </html>
-```
-
-These tags can be thought of as a tree, because all tags are nested within a parent. For example, the template above has the following tree structure.
-
-Since HTML follows something called the Document Object Model (DOM), this tree is sometimes referred to as the “DOM tree.”
-
-## Document Structure
-
-The following tags are used to surround the content of the website.
-
-### Doctype Tag
-
-This tag is the very first tag you should include in your HTML code. It tells the browser which version of HTML you’re using, and helps ensure that your code is displayed correctly.
-
-```html
-<!DOCTYPE html> <!-- 👈 Doctype tag -->
-<html>
-<head>
-  <title>My Page</title>
-</head>
-<body>
-  <h1>Welcome to my page!</h1>
-  <p>This is some text.</p>
-</body>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>Page Title</title>
+    <meta name="description" content="Roughly 155 characters">
+    <link rel="stylesheet" type="text/css" href="mystyle.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
+    <script src="script.js"></script>
+  </head>
+  <body>
+    <!-- Content -->
+  </body>
 </html>
 ```
 
-### Html Tag
-
-This tag marks the beginning of your HTML code. It tells the browser that everything that follows is HTML code.
+### Semantic page structure
 
 ```html
-<!DOCTYPE html>
-<html> <!-- 👈 html tag open -->
-<head>
-  <title>My Page</title>
-</head>
-<body>
-  <h1>Welcome to my page!</h1>
-  <p>This is some text.</p>
-</body> 
-</html> <!-- 👈 html tag close -->
+<header>
+  <div id="logo">HTML</div>
+  <nav>  
+    <ul>
+      <li><a href="/">Home</a>
+      <li><a href="/link">Page</a>
+    </ul>
+  </nav>
+</header>
+<main role="main">
+  <article>
+    <h2>Title 1</h2>
+    <p>Content 1</p>
+  </article>
+  <article>
+    <h2>Title 2</h2>
+    <p>Content 2</p>
+  </article>
+</main>
+<section>
+  A group of related content
+</section>
+<aside>
+  Sidebar
+</aside>
+<footer>
+  <p>&copy; HTML CheatSheet</p>
+  <address>
+    Contact <a href="mailto:me@html6.com">me</a>
+  </address>
+</footer>
 ```
 
-### Head Tag
-
-The head tag contains information about the document, such as the title of the page, links to stylesheets, and metadata.
+### Forms
 
 ```html
-<!DOCTYPE html>
-<html>
-  <head> <!-- 👈 head tag open -->
-  <title>My Page</title>
-  <meta name="description" content="A description of my page.">
-</head> <!-- 👈 head tag close -->
-<body>
-  <h1>Welcome to my page!</h1>
-  <p>This is some text.</p>
-</body>
-</html>
+<form action="/action.php" method="post">
+  Name: <input name="name" type="text" /> <br /> 
+  Age: <input max="99" min="1" name="age" step="1" type="number" value="18" /> <br />
+  <select name="gender">
+    <option selected="selected" value="male">Male</option>
+    <option value="female">Female</option>
+  </select><br /> 
+  <input checked="checked" name="newsletter" type="radio" value="daily" /> Daily <input name="newsletter" type="radio" value="weekly" /> Weekly<br />
+  <textarea cols="20" name="comments" rows="5">Comment</textarea><br />
+  <label><input name="terms" type="checkbox" value="tandc" />Accept terms</label> <br />
+<input type="submit" value="Submit" />
+</form>
 ```
 
-### Title Tag
-
-This tag sets the title of the page, which appears in the browser tab.
+### Definition List
 
 ```html
-<!DOCTYPE html>
-<html>
-<head>
-  <title>My Page</title> <!-- 👈 title tag open & close -->
-</head>
-<body>
-  <h1>Welcome to my page!</h1>
-  <p>This is some text.</p>
-</body>
-</html>
+<dl>
+  <dt>HTML</dt>
+  <dd>Hypertext Markup Language</dd>
+  <dt>CSS</dt>
+  <dd>Cascading Style Sheets </dd>
+</dl>
 ```
 
-### Style Tag
-
-The style tag allows you to add CSS styles directly in your HTML code. This tag is typically placed within the head tag.
+### Dummy Data
 
 ```html
-<!DOCTYPE html>
-<html>
-<head>
-  <title>My Page</title>
-  <style> <!-- 👈 style tag open -->
-    p, h1 {
-      font-size: 16px;
-    }
-  </style> <!-- 👈 style tag close -->
-</head>
-<body>
-  <h1>Welcome to my page!</h1>
-  <p>This is some text.</p>
-</body>
-</html>
+<h1>AI Cake Recipe Inventor</h1>
+<p>Cupcake ipsum dolor sit amet cake croissant fruitcake muffin. Sweet bonbon candy powder cheesecake muffin sesame snaps jujubes. Muffin macaroon cheesecake cookie souffl&eacute; cookie cheesecake lollipop candy canes. Halvah cotton candy sesame snaps chocolate bar. Sugar plum dessert drag&eacute;e macaroon chupa chups. Cake cheesecake wafer cotton candy. Danish jelly halvah jelly beans tootsie roll donut. Halvah cheesecake halvah jujubes sweet roll biscuit croissant wafer. Cake halvah chocolate bar sugar plum apple pie.</p>
+<h2>Your personal michelin star chef</h2>
+<p>Tootsie roll pie topping powder sugar plum souffl&eacute;. Gingerbread sugar plum tiramisu powder macaroon candy canes drag&eacute;e icing. Sweet macaroon tootsie roll chocolate chocolate cake. Tootsie roll muffin donut apple pie gummies powder. Lollipop candy canes bonbon sesame snaps danish brownie croissant tiramisu. Oat cake pastry pudding ice cream fruitcake. Muffin pudding croissant pudding tart oat cake caramels sugar plum icing.</p>
+<h2>Customized to your pallete</h2>
+<p>Cheesecake danish biscuit jelly beans croissant souffl&eacute; sweet candy jelly beans. Fruitcake topping jelly-o bonbon. Topping gummi bears brownie cake bear claw chupa chups brownie carrot cake gummi bears. Cupcake sweet brownie sugar plum. Tiramisu jujubes carrot cake ice cream drag&eacute;e bear claw. Chocolate gingerbread drag&eacute;e souffl&eacute; tiramisu. Pudding gingerbread danish icing oat cake marshmallow chocolate. Topping bonbon oat cake caramels.</p>
+  <h3>Go viral on tiktok now with reciepes to make your friends envious!</h3> 
+<p>Drag&eacute;e chupa chups lemon drops lemon drops fruitcake. Muffin wafer pudding marshmallow drag&eacute;e chocolate souffl&eacute; muffin sweet roll. Sweet roll drag&eacute;e pudding jelly. Chupa chups jelly beans cake. Apple pie tiramisu caramels. Bonbon chocolate bar pudding chupa chups oat cake tootsie roll. Fruitcake cake danish sugar plum chupa chups tart. Topping liquorice drag&eacute;e marshmallow cake candy fruitcake chocolate bar bonbon. Sweet roll oat cake croissant tiramisu wafer cotton candy liquorice bear claw souffl&eacute;. Tart jelly-o marshmallow chocolate bar liquorice cotton candy.</p>
+<p>Lemon drops fruitcake halvah lollipop. Jujubes croissant bonbon marzipan macaroon sweet roll. Tart jelly-o apple pie. Jelly-o sweet roll tart dessert sweet jelly beans chocolate cake gummies cake. Sesame snaps jelly macaroon lemon drops muffin chocolate bear claw jujubes wafer. Jujubes icing oat cake cake jelly marshmallow biscuit lollipop toffee. Lemon drops brownie marshmallow.</p>
+<p>Tiramisu pastry fruitcake tiramisu. Lemon drops sweet lemon drops cotton candy sesame snaps ice cream caramels sweet liquorice. Candy lollipop wafer. Oat cake jelly-o toffee. Jelly biscuit souffl&eacute; gummi bears jelly tart topping. Sesame snaps pudding cookie muffin muffin apple pie cookie jujubes. Croissant cotton candy sweet roll chocolate cake apple pie candy canes sesame snaps danish. Bear claw jujubes dessert jelly beans chocolate cupcake chocolate cake. Oat cake jelly beans cupcake bonbon marzipan jujubes bonbon. Bonbon tart ice cream icing souffl&eacute; bonbon oat cake sesame snaps dessert.</p>
+<p>Sesame snaps lollipop candy topping jelly cookie. Carrot cake danish candy chocolate cake muffin fruitcake jelly beans tart. Chocolate bar pastry dessert pastry. Fruitcake wafer chupa chups marzipan wafer tart jelly beans. Jelly sweet fruitcake cake tootsie roll danish. Pie toffee candy canes. Marzipan muffin jujubes gingerbread lollipop halvah gummies liquorice.</p>
+<p>Dessert cupcake donut. Chocolate cake marshmallow sweet bonbon. Marzipan dessert candy canes sweet roll brownie pudding. Marshmallow biscuit lollipop biscuit croissant. Marzipan liquorice lollipop muffin toffee souffl&eacute; caramels. Tart pudding drag&eacute;e cheesecake icing. Gummi bears wafer apple pie fruitcake.</p>
+<p>Fruitcake cookie powder candy canes. Croissant caramels jelly beans. Gingerbread cookie marshmallow cheesecake carrot cake gummies cake. Chupa chups chocolate cake chocolate cake toffee chupa chups donut bonbon jujubes. Gingerbread drag&eacute;e marzipan wafer. Chupa chups lollipop danish chocolate donut. Sesame snaps gingerbread muffin powder. Cookie candy danish macaroon cake ice cream chocolate bar pastry gummies. Candy marshmallow candy powder jelly beans chupa chups gummies. Cake souffl&eacute; donut liquorice.</p>
+<p>Tootsie roll cheesecake halvah croissant marzipan liquorice cake. Chocolate cake jujubes muffin pudding danish jelly cupcake. Brownie chocolate powder topping jelly beans sesame snaps liquorice cake tiramisu. Gummies bonbon lemon drops croissant dessert chocolate jujubes caramels jujubes. Souffl&eacute; icing macaroon sweet roll fruitcake bear claw cheesecake. Tart sesame snaps toffee oat cake ice cream cookie sugar plum tart. Chocolate cake jelly caramels lollipop cupcake tootsie roll.</p>
 ```
-
-### Body Tag
-
-The body tag contains all of the content that will be displayed on the page, such as text, images, and links.
-
-```html
-<!DOCTYPE html>
-<html>
-<head>
-  <title>My Page</title>
-</head>
-<body> <!-- 👈 body tag open -->
-  <h1>Welcome to my page!</h1>
-  <p>This is some text.</p>
-</body> <!-- 👈 body tag close -->
-</html>
-```
-
-## text
-
-### Headings
-
-These tags are used to create headings on your page. They range in size from h1 (the largest) to h6 (the smallest).
-
-```html
-<!DOCTYPE html>
-<html>
-<head>
-  <title>Heading Page</title>
-</head>
-<body>
-  <h1>Welcome to Heading 1</h1> <!-- 👈 heading 1 tag open & close -->
-  <h2>Heading 2</h2> <!-- 👈 heading 2 tag open & close -->
-  <h3>Heading 3</h3> <!-- 👈 heading 3 tag open & close -->
-  <h4>Heading 4</h4> <!-- 👈 heading 4 tag open & close -->
-  <h5>Heading 5</h5> <!-- 👈 heading 5 tag open & close -->
-  <h6>Heading 6</h6> <!-- 👈 heading 6 tag open & close -->
-</body>
-</html>
-```
-
-### Paragraph
-
-This tag is used to create paragraphs of text.
-
-```html
-<!DOCTYPE html>
-<html>
-<head>
-  <title>My Page</title>
-</head>
-<body>
-  <h1>Welcome to my page!</h1>
-  <p>This is some text.</p>  <!-- 👈 Paragraph tag open & close -->
-  <p>This is some more text.</p> <!-- 👈 Paragraph tag open & close -->
-</body>
-</html>
-```
-
-### Anchor
-
-The anchor tag creates a hyperlink that visitors can click to navigate to another page or section of the current page. It’s a powerful way to connect different parts of your website.
-
-```html
-<!DOCTYPE html>
-<html>
-<head>
-  <title>Anchor Page</title>
-</head>
-<body>
-  <h1>Welcome to my page!</h1>
-      <!-- 👇 anchor tag open & close -->
-  <p>Visit <a href="https://www.google.com/">Google</a>.</p>
-  <p>Visit <a href="https://www.youtube.com/">Youtube</a>.</p>
-  <p>Visit <a href="https://www.facebook.com/">Facebook</a>.</p>
-</body>
-</html>
-```
-
-### Image
-
-The image tag allows you to display images on your website. You can specify the source of the image using the src attribute.
-Images usually include the following attributes:
-
-- `src` - link to the source file
-- `alt` - A descriptive text that is visible on hover or if the image fails to load.
-- `width` & `height` - The width/height of the image. Important to preserve correct aspect ratio.
-
-```html
-<!DOCTYPE html>
-<html>
-<head>
-  <title>My Page</title>
-</head>
-<body>
-  <h1>Welcome to my page!</h1>
-  <img src="https://picsum.photos/500/300" alt="A beautiful image"> <!-- 👈 image tag open and self close -->
-</body>
-</html>
-```
-
-### Form
-
-The form tag is used to create a container for user input. You can use this tag to create a variety of form elements such as input fields, radio buttons, checkboxes, and more.
-
-In the following code, we’re using the form tag to create a contact form that includes input fields for name and email, a textarea for the message, and a submit button.
-
-```html
-<!DOCTYPE html>
-<html>
-<head>
-  <title>My Page</title>
-</head>
-<body>
-  <h1>Contact Us</h1>
-  <form> <!-- 👈 form tag open -->
-    <label for="name">Name:</label>
-    <input type="text" id="name" name="name"><br><br>
-    <label for="email">Email:</label>
-    <input type="email" id="email" name="email"><br><br>
-    <label for="message">Message:</label>
-    <textarea id="message" name="message"></textarea><br><br>
-    <input type="submit" value="Submit">
-  </form> <!-- 👈 form tag close -->
-</body>
-</html>
-```
-
-### Div tag
-
-The div tag is used to create a container for content on your webpage. You can use this tag to group related elements together and apply CSS styles to them. We’ve also applied the .container CSS class to this div to apply the styling.
-
-```html
-<!DOCTYPE html>
-<html>
-<head>
-  <title>My Page</title>
-  <style>
-    .container {
-      background-color: #f2f2f2;
-      padding: 20px;
-    }
-  </style>
-</head>
-<body>
-  <div class="container">
-    <h1>Welcome to my page!</h1>
-    <p>This is some text.</p>
-  </div>
-</body>
-</html>
-```
-
-### Comment Tag
-
-The comment tag in HTML is used to add comments to your code that won’t be displayed in the browser. Comments can be useful for adding notes to your code or temporarily disabling certain sections.
-
-```html
-<!DOCTYPE html>
-<html>
-<head>
-  <title>My Page</title>
-</head>
-<body>
-  <!-- 👉 This is a comment -->
-  <h1>Welcome to my page!</h1>
-  <p>This is some text.</p>
-</body>
-</html>
-```
-
-### List tags
-
-Html has a list item tag for individual list items.
-All list items are contained inside a parent list that can be of two variants:
-
-- ordered list - guarantees the order of the elements.
-- unordered list - does not guarantee the order of the elements.
-
-```html
-<!DOCTYPE html>
-<html>
-<head>
-  <title>My Page</title>
-</head>
-<body>
-  <ol> <!-- 👈 ordered list tag open -->
-    <li>
-      Welcome to my page!
-    </li>
-    <li>
-      This is some text.
-    </li>
-  </ol> <!-- 👈 ordered list tag close -->
-</body>
-</html>
-```
-
-```html
-
-```
-
-By mastering these tags, you’ll be able to create a wide range of web pages and applications. Whether you’re building a simple landing page or a complex web application, these tags will be the building blocks of your code.
 
 ### tools
 
 ### references
 
-[top tag intro reference](https://medium.com/@devsumitg/top-html-tags-every-web-developer-should-know-653092889eb4)
+[getting started with HTML](https://developer.mozilla.org/en-US/docs/Learn/HTML/Introduction_to_HTML/Getting_started)
+
+[common tags reference](https://medium.com/@devsumitg/top-html-tags-every-web-developer-should-know-653092889eb4)

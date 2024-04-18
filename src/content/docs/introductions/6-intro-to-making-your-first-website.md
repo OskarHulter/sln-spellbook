@@ -1,11 +1,11 @@
 ---
-title: A challenge to help you learn the fundamentals of web design
-description: An introductory guide to the CSS box model.
+title: Step 6 - Final boss challenge
+description: A challenge to help you learn the fundamentals of web design.
 ---
 
 ## introduction
 
-Your best friend who is a data engineer has been playing around with a new AI algorithm. Your friend thinks there is a big gap in the market for ai baking recipes and shows you a diagram that looks like this:
+Your best friend who is a data engineer has been playing around with a new AI algorithm. You've noticed a big gap in the market for ai baking recipes and decide that you should make your move before someone steals your amazing idea.
 
 Your friend is busy optimizing the cake creator so it's up to you to create a landing page for the project.
 

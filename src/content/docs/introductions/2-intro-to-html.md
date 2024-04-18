@@ -1,5 +1,5 @@
 ---
-title: Step 1 - An introduction to html
+title: Step 3 - An introduction to html
 description: An introductory guide to the most common html tags.
 ---
 <!-- markdownlint-disable MD033 -->
@@ -348,6 +348,8 @@ All list items are contained inside a parent list that can be of two variants:
 By mastering these tags, you’ll be able to create a wide range of web pages and applications. Whether you’re building a simple landing page or a complex web application, these tags will be the building blocks of your code.
 
 ### tools
+
+Included in VS Code by default:[Emmet: the shortcut to tags](https://docs.emmet.io/abbreviations/syntax/)
 
 ### references
 

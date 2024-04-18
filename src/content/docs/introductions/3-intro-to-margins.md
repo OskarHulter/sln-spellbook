@@ -1,5 +1,5 @@
 ---
-title: An introduction to margins
+title: Step 3 - An introduction to margins
 description: An introductory guide to margins and padding in CSS.
 ---
 
