@@ -15,7 +15,7 @@ h1 {
 - Inside the braces will be one or more declarations, which take the form of property and value pairs. We specify the property (color in the above example) before the colon, and we specify the value of the property after the colon (red in this example).
 This example contains two declarations, one for color and the other for font-size. Each pair specifies a property of the element(s) we are selecting (h1 in this case), then a value that we'd like to give the property.
 
-[![Box Model](https://i0.wp.com/css-tricks.com/wp-content/uploads/2021/02/thebox.png?w=570&ssl=1)
+[Box Model](https://i0.wp.com/css-tricks.com/wp-content/uploads/2021/02/thebox.png?w=570&ssl=1)
 
 CSS properties have different allowable values, depending on which property is being specified. In our example, we have the color property, which can take various color values. We also have the font-size property. This property can take various size units as a value.
 
@@ -31,7 +31,7 @@ Wanna see every single “box” that makes up a page? Try putting this in the s
 
 You will find that you quickly learn some values, whereas others you will need to look up. The individual property pages on [MDN](https://developer.mozilla.org/en-US/docs/Learn/CSS/First_steps/What_is_CSS) give you a quick way to look up properties and their values when you forget or when you want to know what else you can use as a value.
 
-[![Box Model Visualized](https://i0.wp.com/css-tricks.com/wp-content/uploads/2021/02/all-is-a-box.jpg?w=570&ssl=1)
+[Box Model Visualized](https://i0.wp.com/css-tricks.com/wp-content/uploads/2021/02/all-is-a-box.jpg?w=570&ssl=1)
 
 ### Color
 
@@ -113,8 +113,8 @@ margin: 10px 15px 15px 5px;
 
 ### Images
 
-![What a view](https://unsplash.com/photos/silhouette-of-mountains-next-to-body-of-water-2-MmXpeN8YE)
-![what a beetle](https://unsplash.com/photos/green-and-yellow-ceramic-vase-HfhjNA0TYYU)
+[What a view](https://unsplash.com/photos/silhouette-of-mountains-next-to-body-of-water-2-MmXpeN8YE)
+[what a beetle](https://unsplash.com/photos/green-and-yellow-ceramic-vase-HfhjNA0TYYU)
 
 Unsplash is a great resource for images that are free to use in your designs.
 Check it out in the resources below.

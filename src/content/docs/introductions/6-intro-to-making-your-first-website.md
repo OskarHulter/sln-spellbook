@@ -40,7 +40,7 @@ Here's a list of my favorites, pick one or generate your own on whatever topic y
 [Generate a name for a baking startup](https://namelix.com/app/?keywords=cupcake)
 [or pick your own topic](https://namelix.com/)
 
-[![Box Model](https://i0.wp.com/css-tricks.com/wp-content/uploads/2021/02/thebox.png?w=570&ssl=1)
+[Box Model](https://i0.wp.com/css-tricks.com/wp-content/uploads/2021/02/thebox.png?w=570&ssl=1)
 
 See it with your own eyes
 Wanna see every single “box” that makes up a page? Try putting this in the stylesheet temporarily:
@@ -51,23 +51,7 @@ Wanna see every single “box” that makes up a page? Try putting this in the s
 }
 ```
 
-[![Box Model Visualized](https://i0.wp.com/css-tricks.com/wp-content/uploads/2021/02/all-is-a-box.jpg?w=570&ssl=1)
-
-## Quick guide
-
-```html
-
-<table role="presentation" width="600" align="center" cellpadding="0" cellspacing="0" border="0">
-    <tr>
-        <td width="100%" style="font-family:Arial, sans-serif; font-size:16px; line-height:1.5em; color:#333333; padding:2em; background-color:#e4e4e4;">
-
-            <p style="margin:0;">Paragraph of text.</p>
-
-        </td>
-    </tr>
-</table>
-
-```
+[Box Model Visualized](https://i0.wp.com/css-tricks.com/wp-content/uploads/2021/02/all-is-a-box.jpg?w=570&ssl=1)
 
 > "You have to let it all go, Neo. Fear, doubt, and disbelief. Free your mind."
 > Morpheus, the Matrix
