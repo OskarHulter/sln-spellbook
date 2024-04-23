@@ -10,7 +10,7 @@ serilog sink console
 
 ## Redirected Input
 
-https://learn.microsoft.com/en-us/dotnet/core/install/upgrade
+<https://learn.microsoft.com/en-us/dotnet/core/install/upgrade>
 
 The universal method for passing request data is through redirected stdin (standard input)—piping.
 
