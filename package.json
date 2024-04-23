@@ -24,28 +24,28 @@
   "dependencies": {
     "@astrojs/check": "^0.5.10",
     "@astrojs/starlight": "^0.21.5",
-    "astro": "^4.6.1",
+    "astro": "^4.6.3",
     "sharp": "^0.33.3"
   },
   "devDependencies": {
-    "@asyncapi/modelina": "^3.4.6",
-    "@biomejs/biome": "1.6.4",
+    "@asyncapi/modelina": "^3.4.9",
+    "@biomejs/biome": "1.7.1",
     "@happy-dom/global-registrator": "^14.7.1",
     "@tsconfig/node20": "^20.1.4",
     "@types/bun": "latest",
     "cmd-ts": "^0.13.0",
-    "code-inspector-plugin": "^0.11.0",
-    "crawlee": "^3.9.1",
+    "code-inspector-plugin": "^0.12.2",
+    "crawlee": "^3.9.2",
     "execa": "^8.0.1",
     "git-cliff": "^2.2.1",
     "inline-css": "^4.0.2",
     "just-install": "^2.0.1",
     "lefthook": "^1.6.10",
-    "open-props": "^1.7.2",
+    "open-props": "^1.7.3",
     "playwright": "^1.43.1",
     "reveal.js": "^5.1.0",
     "ts-dedent": "^2.2.0",
-    "type-fest": "^4.15.0"
+    "type-fest": "^4.16.0"
   },
   "peerDependencies": {
     "typescript": "^5.4.3"
