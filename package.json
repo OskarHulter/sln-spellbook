@@ -8,7 +8,6 @@
     "styleuse-cat": "cat main.css | doiuse --browsers 'ie >= 9, > 1%, last 2 versions'",
     "validate": "bun lint && bun format && bun test && bun run build",
     "format": "bunx @biomejs/biome format --write ./src",
-    "lint-check": "bunx @biomejs/biome lint ./src",
     "lint-ci": "bunx @biomejs/biome ci ./src",
     "dev": "astro dev",
     "start": "astro dev",
