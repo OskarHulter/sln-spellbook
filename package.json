@@ -56,7 +56,11 @@
     "@hyperjump/json-schema",
     "@hyperjump/json-schema-core",
     "@hyperjump/pact",
+    "@swc/core",
+    "esbuild",
     "just-install",
-    "protobufjs"
+    "lefthook",
+    "protobufjs",
+    "sharp"
   ]
 }
