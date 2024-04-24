@@ -3,6 +3,8 @@ title: dotnet unit testing
 description: A guide to unit testing with C#
 ---
 
+constructor into member initializer!
+
 System.ValueTuple over System.Tuple?
 use source generator to implement interceptors for you.
 
@@ -804,4 +806,4 @@ internal static class FixtureHelpers
 - [FluentValidation](https://github.com/FluentValidation/FluentValidation)
 - [fake it easy](https://fakeiteasy.github.io/)
 - [elastic-net](https://github.com/elastic/elasticsearch-net)
-- [Chain Actions, Funcs, and Predicates In .NET](https://khalidabuhakmeh.com/chain-lambdas-in-dotnet) Chain Actions, Funcs, and Predicates In .NET
+- [Chain Actions, Func, and Predicates In .NET](https://khalidabuhakmeh.com/chain-lambdas-in-dotnet) Chain Actions, Func, and Predicates In .NET
