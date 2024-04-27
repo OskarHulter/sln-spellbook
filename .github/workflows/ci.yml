@@ -22,4 +22,4 @@ jobs:
         id: scc
         uses: iryanbell/scc-docker-action@v1.0.2
         with:
-          args: ${{ env.workspace }} -i js,ts,c#,html,css
+          args: ${{ env.workspace }} -i js,ts,jsx,tsx,c#,html,css
