@@ -1,19 +1,25 @@
 name: ci
 on: [push, pull_request]
 jobs:
-  my-job:
-    name: my-job
+  validate:
+    name: Build and validate the project.
     runs-on: ubuntu-latest
     steps:
-      # ...
       - uses: actions/checkout@v4
       - uses: oven-sh/setup-bun@v1
-      
       # run any `bun` or `bunx` command
       - run: bun install
-    #  - uses: withastro/action-studio@main
+      #  - uses: withastro/action-studio@main
       - run: bun validate
-      # - run: bun db-setup
-      # - run: bun run src/snippets/rewriter.ts
-      # - run: bun run src/inliner/inliner.ts
-      # - run: bun run src/snippets/html-rewriter.ts
+  scc_job:
+    name: A job to count the lines of code.
+    needs: validate
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+      - name: Get the lines of code.
+        id: scc
+        uses: iryanbell/scc-docker-action@v1.0.2
+        with:
+          args: ${{ env.workspace }} -i js,ts,c#,html,css
