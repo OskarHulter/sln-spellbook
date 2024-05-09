@@ -1,0 +1,333 @@
+@keyframes spinner-one-animation {
+	0% {
+		opacity: 1;
+	}
+
+	12% {
+		opacity: 1;
+	}
+
+	25% {
+		opacity: 1;
+	}
+
+	36% {
+		opacity: 1;
+	}
+
+	49% {
+		opacity: 0;
+	}
+
+	61% {
+		opacity: 0;
+	}
+
+	74% {
+		opacity: 0;
+	}
+
+	86% {
+		opacity: 0;
+	}
+
+	99% {
+		opacity: 0;
+	}
+}
+
+@keyframes spinner-two-animation {
+	0% {
+		opacity: 0;
+	}
+
+	12% {
+		opacity: 1;
+	}
+
+	25% {
+		opacity: 1;
+	}
+
+	36% {
+		opacity: 1;
+	}
+
+	49% {
+		opacity: 1;
+	}
+
+	61% {
+		opacity: 0;
+	}
+
+	74% {
+		opacity: 0;
+	}
+
+	86% {
+		opacity: 0;
+	}
+
+	99% {
+		opacity: 0;
+	}
+}
+
+@keyframes spinner-three-animation {
+	0% {
+		opacity: 0;
+	}
+
+	12% {
+		opacity: 0;
+	}
+
+	25% {
+		opacity: 1;
+	}
+
+	36% {
+		opacity: 1;
+	}
+
+	49% {
+		opacity: 1;
+	}
+
+	61% {
+		opacity: 1;
+	}
+
+	74% {
+		opacity: 0;
+	}
+
+	86% {
+		opacity: 0;
+	}
+
+	99% {
+		opacity: 0;
+	}
+}
+
+@keyframes spinner-four-animation {
+	0% {
+		opacity: 0;
+	}
+
+	12% {
+		opacity: 0;
+	}
+
+	25% {
+		opacity: 0;
+	}
+
+	36% {
+		opacity: 1;
+	}
+
+	49% {
+		opacity: 1;
+	}
+
+	61% {
+		opacity: 1;
+	}
+
+	74% {
+		opacity: 1;
+	}
+
+	86% {
+		opacity: 0;
+	}
+
+	99% {
+		opacity: 0;
+	}
+}
+
+@keyframes spinner-five-animation {
+	0% {
+		opacity: 0;
+	}
+
+	12% {
+		opacity: 0;
+	}
+
+	25% {
+		opacity: 0;
+	}
+
+	36% {
+		opacity: 0;
+	}
+
+	49% {
+		opacity: 1;
+	}
+
+	61% {
+		opacity: 1;
+	}
+
+	74% {
+		opacity: 1;
+	}
+
+	86% {
+		opacity: 1;
+	}
+
+	99% {
+		opacity: 0;
+	}
+}
+
+@keyframes fadein {
+	from {
+		opacity: 0;
+	}
+
+	to {
+		opacity: 1;
+	}
+}
+
+body {
+	padding: 0;
+	margin: 0;
+}
+
+.splash-container {
+	display: none;
+	align-items: center;
+	justify-content: center;
+	animation: fadein 2s;
+}
+
+.loading .splash-container {
+	display: flex;
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100vw;
+	height: 100vh;
+}
+
+.critical-spinner-styles .load-spinner {
+	opacity: 1;
+	transition-delay: 0.3s;
+	transition-property: opacity;
+	height: 20px;
+	width: 110px;
+	position: absolute;
+	top: 0;
+	right: 0;
+	bottom: 0;
+	left: 0;
+	margin: auto;
+	z-index: 9999;
+}
+
+.critical-spinner-styles .load-spinner .one {
+	animation: spinner-one-animation .9s infinite;
+}
+
+.critical-spinner-styles .load-spinner .two {
+	animation: spinner-two-animation .9s infinite;
+}
+
+.critical-spinner-styles .load-spinner .three {
+	animation: spinner-three-animation .9s infinite;
+}
+
+.critical-spinner-styles .load-spinner .four {
+	animation: spinner-four-animation .9s infinite;
+}
+
+.critical-spinner-styles .load-spinner .five {
+	animation: spinner-five-animation .9s infinite;
+}
+
+.critical-spinner-styles .load-spinner .five,
+.critical-spinner-styles .load-spinner .four,
+.critical-spinner-styles .load-spinner .one,
+.critical-spinner-styles .load-spinner .three,
+.critical-spinner-styles .load-spinner .two {
+	position: relative;
+	float: left;
+	height: 100%;
+	width: 18%;
+	margin-left: 2%;
+	background-color: #13b57a;
+	background-position: center center;
+	background-size: 110% 110%;
+	background-repeat: no-repeat;
+	background-image: url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0naHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmcnIHZpZXdCb3g9JzAgMCA3OS43IDc5LjcnPjxwYXRoIGQ9J00zOS45IDUzLjlMNTIgNTAuN2w1LjEgMTUuNy0xNy4yLTEyLjV6bTI3LjktMjAuM0g0Ni40bC02LjYtMjAuMy02LjYgMjAuM0gxMS44bDE3LjMgMTIuNi02LjYgMjAuM0wzOS44IDU0bDEwLjctNy44IDE3LjMtMTIuNnonIGZpbGw9JyNmZmYnLz48L3N2Zz4=');
+	border-radius: 10%;
+	will-change: opacity;
+	transition: opacity, .3s ease-in-out;
+	opacity: 0;
+}
+
+.page-loader-full {
+	background-color: #fff;
+	position: relative;
+	z-index: 1000;
+	width: 100%;
+	height: 100vh;
+	display: none;
+}
+
+.page-loader-full--visible {
+	display: block;
+}
+
+.splash-flex-item {
+	margin: 0;
+	transition: none;
+	display: grid;
+	row-gap: 32px;
+}
+
+.splash-flex-item .load-spinner {
+	position: static;
+}
+
+.page-loader-view {
+	display: none;
+}
+
+.page-loader-view__nav {
+	background-color: var(--trustpilot-brand-green-10);
+	min-height: 69px;
+}
+
+.page-loader-view__content {
+	flex-grow: 1;
+	background-color: var(--elevation-background);
+}
+
+.page-loader-view--visible {
+	display: block;
+}
+
+@media (min-width: 1024px) {
+	.page-loader-view--visible {
+		display: flex;
+		height: 100%;
+		position: absolute;
+		top: 0;
+		left: 0;
+		width: 100%;
+	}
+
+	.page-loader-view__nav {
+		flex-basis: 240px;
+	}
+}
