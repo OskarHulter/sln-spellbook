@@ -18,8 +18,8 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v4
-      - name: Get the lines of code.
-        id: scc
-        run: scc --ci --format-multi tabular:stdout,html:reports/code-stats-ci.html,html-table:reports/code-stats-table-ci.html,json2:reports/code-stats-ci.json -i js,ts,jsx,tsx,c#,html,css
+      # - name: Get the lines of code.
+      #   id: scc
+      #   run: scc --ci --format-multi tabular:stdout,html:reports/code-stats-ci.html,html-table:reports/code-stats-table-ci.html,json2:reports/code-stats-ci.json -i js,ts,jsx,tsx,c#,html,css
           # with:
           #   args: ${{ env.workspace }} -i js,ts,jsx,tsx,c#,html,css

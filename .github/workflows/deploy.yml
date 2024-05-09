@@ -35,11 +35,8 @@ jobs:
       - name: validate
         run: bun run validate
       - name: Create code stats report.
-        id: scc
-        run: scc --ci --format-multi tabular:stdout,html:reports/code-stats-ci.html,html-table:reports/code-stats-table-ci.html,json2:reports/code-stats-ci.json -i js,ts,jsx,tsx,c#,html,css
-      - name: Create code stats report.
         id: scc-script
-        run: bun run scc-ci
+        run: bun run scc
       - name: Create Release Pull Request
         uses: changesets/action@v1
         env:

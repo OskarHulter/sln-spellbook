@@ -15,6 +15,7 @@
     "preview": "astro preview",
     "astro": "astro",
     "scc-ci": "scc --format-multi 'wide:stdout,html:reports/size/output.html,json:reports/size/output.json,csv:reports/size/output.csv'",
+    "scc": "scc --ci --format-multi tabular:stdout,html:reports/code-stats-ci.html,html-table:reports/code-stats-table-ci.html,json2:reports/code-stats-ci.json -i js,ts,jsx,tsx,c#,html,css",
     "p-d": "oha --disable-keepalive --latency-correction  --no-pre-lookup -j --no-tui --stats-success-breakdown -t 60sec -q 10000 -c 800 -n 1000000 -z 3sec http://localhost:4321/sln-spellbook > reports/ddos-api-perf-report-stats.json",
     "p-js": "oha --disable-keepalive --latency-correction --no-pre-lookup -j --no-tui --stats-success-breakdown -t 60sec -q 1000 -n 10000 http://localhost:4321/sln-spellbook > reports/api-perf-report-stats.json",
     "p-ten": "oha --disable-keepalive --latency-correction  --no-pre-lookup -j --no-tui  -t 60sec -q 10000 -n 1000000 -z 10sec http://localhost:4321/sln-spellbook > reports/ddos-api-perf-report.json",
