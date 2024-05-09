@@ -3,6 +3,38 @@ title: dotnet unit testing
 description: A guide to unit testing with C#
 ---
 
+## Testing culture
+
+Make the desired behaviour
+
+- Obvious
+- Easy
+- Attractive
+- Satisfying
+
+How can we contribute to these points?
+Let's ask ourselves:
+
+### Obvious?
+
+- define the principles together.
+- shared purpose.
+
+### Easier?
+
+- tech-coaching
+- reduce friction
+
+### Attractive?
+
+- Reduce time pressure
+- refactoring score
+
+### Satisfying?
+
+- Pair up
+- Never break the chain twice
+
 constructor into member initializer!
 
 System.ValueTuple over System.Tuple?
