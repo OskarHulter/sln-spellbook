@@ -34,9 +34,9 @@ jobs:
           package-manager: bun@latest # The Node package manager that should be used to install dependencies and build your site. Automatically detected based on your lockfile. (optional)
       - name: validate
         run: bun run validate
-      - name: Create code stats report.
-        id: scc-script
-        run: bun run scc
+      # - name: Create code stats report.
+      #   id: scc-script
+      #   run: bun run scc
       - name: Create Release Pull Request
         uses: changesets/action@v1
         env:
