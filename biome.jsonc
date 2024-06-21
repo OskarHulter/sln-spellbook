@@ -41,7 +41,7 @@
       "arrowParentheses": "asNeeded",
       "quoteProperties": "preserve",
       "semicolons": "asNeeded",
-      "trailingComma": "all",
+      "trailingCommas": "all",
       "indentStyle": "space",
       "quoteStyle": "single"
     }
