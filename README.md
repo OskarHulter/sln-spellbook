@@ -27,5 +27,5 @@ This is a lot of steps and is quite finicky (we have to pull from the base branc
 [![Scc Count Badge](https://sloc.xyz/github/boyter/scc/?category=lines)](https://github.com/boyter/scc/)
 [![Scc Count Badge](https://sloc.xyz/github/boyter/scc/?category=comments)](https://github.com/boyter/scc/)
 [![Scc Count Badge](https://sloc.xyz/github/boyter/scc/?category=cocomo)](https://github.com/boyter/scc/)
-[![Scc Count Badge](https://sloc.xyz/github/boyter/scc/?category=cocomo&avg-wage=1)](https://github.com/boyter/scc/)
-[![Scc Count Badge](https://sloc.xyz/github/boyter/scc/?category=cocomo&avg-wage=100000)](https://github.com/boyter/scc/)
+
+![Alt](https://repobeats.axiom.co/api/embed/687e0a1573e800e2cfe1bceac97c7209dd279c38.svg "Repobeats analytics image")
